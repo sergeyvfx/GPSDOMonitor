@@ -1,0 +1,3 @@
+Scripts in this directory were used to better understand what type of data
+the GPSDO module is transmitting. These scripts can be helpful in the future
+to simplify torubleshooting or porting the code to different GPSDO modules.

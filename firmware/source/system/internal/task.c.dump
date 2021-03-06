@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="win32A" char_bit="8" short_bit="16" int_bit="32" long_bit="32" long_long_bit="64" pointer_bit="32"/>
+  <rawtokens>
+    <file index="0" name="../source/system/internal/task.c"/>
+    <tok fileIndex="0" linenr="1" column="1" str="// Copyright (c) 2021, Sergey Sharybin"/>
+    <tok fileIndex="0" linenr="2" column="1" str="//"/>
+    <tok fileIndex="0" linenr="3" column="1" str="// Permission is hereby granted, free of charge, to any person obtaining a copy"/>
+    <tok fileIndex="0" linenr="4" column="1" str="// of this software and associated documentation files (the &quot;Software&quot;), to"/>
+    <tok fileIndex="0" linenr="5" column="1" str="// deal in the Software without restriction, including without limitation the"/>
+    <tok fileIndex="0" linenr="6" column="1" str="// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or"/>
+    <tok fileIndex="0" linenr="7" column="1" str="// sell copies of the Software, and to permit persons to whom the Software is"/>
+    <tok fileIndex="0" linenr="8" column="1" str="// furnished to do so, subject to the following conditions:"/>
+    <tok fileIndex="0" linenr="9" column="1" str="//"/>
+    <tok fileIndex="0" linenr="10" column="1" str="// The above copyright notice and this permission notice shall be included in"/>
+    <tok fileIndex="0" linenr="11" column="1" str="// all copies or substantial portions of the Software."/>
+    <tok fileIndex="0" linenr="12" column="1" str="//"/>
+    <tok fileIndex="0" linenr="13" column="1" str="// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR"/>
+    <tok fileIndex="0" linenr="14" column="1" str="// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,"/>
+    <tok fileIndex="0" linenr="15" column="1" str="// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE"/>
+    <tok fileIndex="0" linenr="16" column="1" str="// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"/>
+    <tok fileIndex="0" linenr="17" column="1" str="// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING"/>
+    <tok fileIndex="0" linenr="18" column="1" str="// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS"/>
+    <tok fileIndex="0" linenr="19" column="1" str="// IN THE SOFTWARE."/>
+    <tok fileIndex="0" linenr="20" column="1" str="//"/>
+    <tok fileIndex="0" linenr="21" column="1" str="// Author: Sergey Sharybin (sergey.vfx@gmail.com)"/>
+    <tok fileIndex="0" linenr="23" column="1" str="#"/>
+    <tok fileIndex="0" linenr="23" column="2" str="include"/>
+    <tok fileIndex="0" linenr="23" column="10" str="&quot;system/task.h&quot;"/>
+    <tok fileIndex="0" linenr="25" column="1" str="#"/>
+    <tok fileIndex="0" linenr="25" column="2" str="include"/>
+    <tok fileIndex="0" linenr="25" column="10" str="&lt;xc.h&gt;"/>
+    <tok fileIndex="0" linenr="27" column="1" str="#"/>
+    <tok fileIndex="0" linenr="27" column="2" str="define"/>
+    <tok fileIndex="0" linenr="27" column="9" str="MAX_TASK_HANDLERS"/>
+    <tok fileIndex="0" linenr="27" column="27" str="16"/>
+    <tok fileIndex="0" linenr="29" column="1" str="static"/>
+    <tok fileIndex="0" linenr="29" column="8" str="int"/>
+    <tok fileIndex="0" linenr="29" column="12" str="g_num_task_handlers"/>
+    <tok fileIndex="0" linenr="29" column="31" str=";"/>
+    <tok fileIndex="0" linenr="30" column="1" str="static"/>
+    <tok fileIndex="0" linenr="30" column="8" str="TaskFunction"/>
+    <tok fileIndex="0" linenr="30" column="21" str="g_functions"/>
+    <tok fileIndex="0" linenr="30" column="32" str="["/>
+    <tok fileIndex="0" linenr="30" column="33" str="MAX_TASK_HANDLERS"/>
+    <tok fileIndex="0" linenr="30" column="50" str="]"/>
+    <tok fileIndex="0" linenr="30" column="51" str=";"/>
+    <tok fileIndex="0" linenr="32" column="1" str="void"/>
+    <tok fileIndex="0" linenr="32" column="6" str="TASK_Initialize"/>
+    <tok fileIndex="0" linenr="32" column="21" str="("/>
+    <tok fileIndex="0" linenr="32" column="22" str="void"/>
+    <tok fileIndex="0" linenr="32" column="26" str=")"/>
+    <tok fileIndex="0" linenr="32" column="28" str="{"/>
+    <tok fileIndex="0" linenr="33" column="3" str="g_num_task_handlers"/>
+    <tok fileIndex="0" linenr="33" column="23" str="="/>
+    <tok fileIndex="0" linenr="33" column="25" str="0"/>
+    <tok fileIndex="0" linenr="33" column="26" str=";"/>
+    <tok fileIndex="0" linenr="34" column="1" str="}"/>
+    <tok fileIndex="0" linenr="36" column="1" str="void"/>
+    <tok fileIndex="0" linenr="36" column="6" str="TASK_Register"/>
+    <tok fileIndex="0" linenr="36" column="19" str="("/>
+    <tok fileIndex="0" linenr="36" column="20" str="TaskFunction"/>
+    <tok fileIndex="0" linenr="36" column="33" str="function"/>
+    <tok fileIndex="0" linenr="36" column="41" str=")"/>
+    <tok fileIndex="0" linenr="36" column="43" str="{"/>
+    <tok fileIndex="0" linenr="37" column="3" str="g_functions"/>
+    <tok fileIndex="0" linenr="37" column="14" str="["/>
+    <tok fileIndex="0" linenr="37" column="15" str="g_num_task_handlers"/>
+    <tok fileIndex="0" linenr="37" column="34" str="++"/>
+    <tok fileIndex="0" linenr="37" column="36" str="]"/>
+    <tok fileIndex="0" linenr="37" column="38" str="="/>
+    <tok fileIndex="0" linenr="37" column="40" str="function"/>
+    <tok fileIndex="0" linenr="37" column="48" str=";"/>
+    <tok fileIndex="0" linenr="38" column="1" str="}"/>
+    <tok fileIndex="0" linenr="40" column="1" str="void"/>
+    <tok fileIndex="0" linenr="40" column="6" str="TASK_Run"/>
+    <tok fileIndex="0" linenr="40" column="14" str="("/>
+    <tok fileIndex="0" linenr="40" column="15" str="void"/>
+    <tok fileIndex="0" linenr="40" column="19" str=")"/>
+    <tok fileIndex="0" linenr="40" column="21" str="{"/>
+    <tok fileIndex="0" linenr="41" column="3" str="for"/>
+    <tok fileIndex="0" linenr="41" column="7" str="("/>
+    <tok fileIndex="0" linenr="41" column="8" str="int"/>
+    <tok fileIndex="0" linenr="41" column="12" str="i"/>
+    <tok fileIndex="0" linenr="41" column="14" str="="/>
+    <tok fileIndex="0" linenr="41" column="16" str="0"/>
+    <tok fileIndex="0" linenr="41" column="17" str=";"/>
+    <tok fileIndex="0" linenr="41" column="19" str="i"/>
+    <tok fileIndex="0" linenr="41" column="21" str="&lt;"/>
+    <tok fileIndex="0" linenr="41" column="23" str="g_num_task_handlers"/>
+    <tok fileIndex="0" linenr="41" column="42" str=";"/>
+    <tok fileIndex="0" linenr="41" column="44" str="++"/>
+    <tok fileIndex="0" linenr="41" column="46" str="i"/>
+    <tok fileIndex="0" linenr="41" column="47" str=")"/>
+    <tok fileIndex="0" linenr="41" column="49" str="{"/>
+    <tok fileIndex="0" linenr="42" column="5" str="g_functions"/>
+    <tok fileIndex="0" linenr="42" column="16" str="["/>
+    <tok fileIndex="0" linenr="42" column="17" str="i"/>
+    <tok fileIndex="0" linenr="42" column="18" str="]"/>
+    <tok fileIndex="0" linenr="42" column="19" str="("/>
+    <tok fileIndex="0" linenr="42" column="20" str=")"/>
+    <tok fileIndex="0" linenr="42" column="21" str=";"/>
+    <tok fileIndex="0" linenr="43" column="3" str="}"/>
+    <tok fileIndex="0" linenr="44" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="../source/system/internal/task.c" linenr="23" str="#include &quot;system/task.h&quot;"/>
+    <directive file="../source/system/internal/task.c" linenr="25" str="#include &lt;xc.h&gt;"/>
+    <directive file="../source/system/internal/task.c" linenr="27" str="#define MAX_TASK_HANDLERS 16"/>
+  </directivelist>
+  <tokenlist>
+    <token id="02DAF748" file="../source/system/internal/task.c" linenr="29" column="1" str="static" scope="02D85DA0" type="name"/>
+    <token id="02DAFAC8" file="../source/system/internal/task.c" linenr="29" column="8" str="int" scope="02D85DA0" type="name"/>
+    <token id="02DAF588" file="../source/system/internal/task.c" linenr="29" column="12" str="g_num_task_handlers" scope="02D85DA0" type="name" varId="1" variable="01CD2570" valueType-type="int" valueType-sign="signed"/>
+    <token id="02DAF648" file="../source/system/internal/task.c" linenr="29" column="31" str=";" scope="02D85DA0"/>
+    <token id="02DAFBC8" file="../source/system/internal/task.c" linenr="30" column="1" str="static" scope="02D85DA0" type="name"/>
+    <token id="02DAF6C8" file="../source/system/internal/task.c" linenr="30" column="8" str="TaskFunction" scope="02D85DA0" type="name"/>
+    <token id="03174FD8" file="../source/system/internal/task.c" linenr="30" column="21" str="g_functions" scope="02D85DA0" type="name" varId="2" variable="01CD2170" astParent="03174D18"/>
+    <token id="03174D18" file="../source/system/internal/task.c" linenr="30" column="32" str="[" scope="02D85DA0" link="03174ED8" astOperand1="03174FD8" astOperand2="03174A18"/>
+    <token id="03174A18" file="../source/system/internal/task.c" linenr="30" column="33" str="16" scope="02D85DA0" type="number" isInt="True" isExpandedMacro="True" values="01CCBC90" astParent="03174D18" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174ED8" file="../source/system/internal/task.c" linenr="30" column="50" str="]" scope="02D85DA0" link="03174D18"/>
+    <token id="03174B58" file="../source/system/internal/task.c" linenr="30" column="51" str=";" scope="02D85DA0"/>
+    <token id="03174A58" file="../source/system/internal/task.c" linenr="32" column="1" str="void" scope="02D85DA0" type="name"/>
+    <token id="03174A98" file="../source/system/internal/task.c" linenr="32" column="6" str="TASK_Initialize" scope="02D85DA0" type="name" function="01D56590" astParent="03174C98"/>
+    <token id="03174C98" file="../source/system/internal/task.c" linenr="32" column="21" str="(" scope="02D85DA0" link="03174F58" astOperand1="03174A98" valueType-type="void"/>
+    <token id="03174F58" file="../source/system/internal/task.c" linenr="32" column="26" str=")" scope="02D85DA0" link="03174C98"/>
+    <token id="03174D58" file="../source/system/internal/task.c" linenr="32" column="28" str="{" scope="02D85E38" link="03174B98"/>
+    <token id="031749D8" file="../source/system/internal/task.c" linenr="33" column="3" str="g_num_task_handlers" scope="02D85E38" type="name" varId="1" variable="01CD2570" astParent="03174B18" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174B18" file="../source/system/internal/task.c" linenr="33" column="23" str="=" scope="02D85E38" type="op" isAssignmentOp="True" astOperand1="031749D8" astOperand2="03174858" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174858" file="../source/system/internal/task.c" linenr="33" column="25" str="0" scope="02D85E38" type="number" isInt="True" values="01CCBDD0" astParent="03174B18" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174F98" file="../source/system/internal/task.c" linenr="33" column="26" str=";" scope="02D85E38"/>
+    <token id="03174B98" file="../source/system/internal/task.c" linenr="34" column="1" str="}" scope="02D85E38" link="03174D58"/>
+    <token id="03174E18" file="../source/system/internal/task.c" linenr="36" column="1" str="void" scope="02D85DA0" type="name"/>
+    <token id="03174BD8" file="../source/system/internal/task.c" linenr="36" column="6" str="TASK_Register" scope="02D85DA0" type="name" function="01D566F0" astParent="03174D98"/>
+    <token id="03174D98" file="../source/system/internal/task.c" linenr="36" column="19" str="(" scope="02D85DA0" link="03174918" astOperand1="03174BD8" astOperand2="03174C18" valueType-type="void"/>
+    <token id="03174DD8" file="../source/system/internal/task.c" linenr="36" column="20" str="TaskFunction" scope="02D85DA0" type="name"/>
+    <token id="03174C18" file="../source/system/internal/task.c" linenr="36" column="33" str="function" scope="02D85DA0" type="name" varId="3" variable="01CD2270" astParent="03174D98"/>
+    <token id="03174918" file="../source/system/internal/task.c" linenr="36" column="41" str=")" scope="02D85DA0" link="03174D98"/>
+    <token id="03174C58" file="../source/system/internal/task.c" linenr="36" column="43" str="{" scope="02D862F8" link="03174158"/>
+    <token id="03174CD8" file="../source/system/internal/task.c" linenr="37" column="3" str="g_functions" scope="02D862F8" type="name" varId="2" variable="01CD2170" astParent="03174E58"/>
+    <token id="03174E58" file="../source/system/internal/task.c" linenr="37" column="14" str="[" scope="02D862F8" link="031748D8" astParent="03174F18" astOperand1="03174CD8" astOperand2="03174898"/>
+    <token id="03174E98" file="../source/system/internal/task.c" linenr="37" column="15" str="g_num_task_handlers" scope="02D862F8" type="name" varId="1" variable="01CD2570" astParent="03174898" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174898" file="../source/system/internal/task.c" linenr="37" column="34" str="++" scope="02D862F8" type="op" astParent="03174E58" astOperand1="03174E98" valueType-type="int" valueType-sign="signed"/>
+    <token id="031748D8" file="../source/system/internal/task.c" linenr="37" column="36" str="]" scope="02D862F8" link="03174E58"/>
+    <token id="03174F18" file="../source/system/internal/task.c" linenr="37" column="38" str="=" scope="02D862F8" type="op" isAssignmentOp="True" astOperand1="03174E58" astOperand2="03174958"/>
+    <token id="03174958" file="../source/system/internal/task.c" linenr="37" column="40" str="function" scope="02D862F8" type="name" varId="3" variable="01CD2270" astParent="03174F18"/>
+    <token id="03174998" file="../source/system/internal/task.c" linenr="37" column="48" str=";" scope="02D862F8"/>
+    <token id="03174158" file="../source/system/internal/task.c" linenr="38" column="1" str="}" scope="02D862F8" link="03174C58"/>
+    <token id="031743D8" file="../source/system/internal/task.c" linenr="40" column="1" str="void" scope="02D85DA0" type="name"/>
+    <token id="03174318" file="../source/system/internal/task.c" linenr="40" column="6" str="TASK_Run" scope="02D85DA0" type="name" function="01D56170" astParent="03174198"/>
+    <token id="03174198" file="../source/system/internal/task.c" linenr="40" column="14" str="(" scope="02D85DA0" link="03174818" astOperand1="03174318" valueType-type="void"/>
+    <token id="03174818" file="../source/system/internal/task.c" linenr="40" column="19" str=")" scope="02D85DA0" link="03174198"/>
+    <token id="031741D8" file="../source/system/internal/task.c" linenr="40" column="21" str="{" scope="02D85550" link="03174258"/>
+    <token id="031740D8" file="../source/system/internal/task.c" linenr="41" column="3" str="for" scope="02D85550" type="name" astParent="03174398"/>
+    <token id="03174398" file="../source/system/internal/task.c" linenr="41" column="7" str="(" scope="02D85550" link="03174798" astOperand1="031740D8" astOperand2="03174658"/>
+    <token id="03174698" file="../source/system/internal/task.c" linenr="41" column="8" str="int" scope="02D85550" type="name"/>
+    <token id="03174498" file="../source/system/internal/task.c" linenr="41" column="12" str="i" scope="02D85550" type="name" varId="4" variable="01CD2530" astParent="031746D8" valueType-type="int" valueType-sign="signed"/>
+    <token id="031746D8" file="../source/system/internal/task.c" linenr="41" column="14" str="=" scope="02D85550" type="op" isAssignmentOp="True" astParent="03174658" astOperand1="03174498" astOperand2="03174718" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174718" file="../source/system/internal/task.c" linenr="41" column="16" str="0" scope="02D85550" type="number" isInt="True" values="01CCBDA0" astParent="031746D8" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174658" file="../source/system/internal/task.c" linenr="41" column="17" str=";" scope="02D85550" astParent="03174398" astOperand1="031746D8" astOperand2="031744D8"/>
+    <token id="03174418" file="../source/system/internal/task.c" linenr="41" column="19" str="i" scope="02D85550" type="name" varId="4" variable="01CD2530" astParent="03174758" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174758" file="../source/system/internal/task.c" linenr="41" column="21" str="&lt;" scope="02D85550" type="op" isComparisonOp="True" astParent="031744D8" astOperand1="03174418" astOperand2="03174458" valueType-type="bool"/>
+    <token id="03174458" file="../source/system/internal/task.c" linenr="41" column="23" str="g_num_task_handlers" scope="02D85550" type="name" varId="1" variable="01CD2570" astParent="03174758" valueType-type="int" valueType-sign="signed"/>
+    <token id="031744D8" file="../source/system/internal/task.c" linenr="41" column="42" str=";" scope="02D85550" astParent="03174658" astOperand1="03174758" astOperand2="03174098"/>
+    <token id="03174098" file="../source/system/internal/task.c" linenr="41" column="44" str="++" scope="02D85550" type="op" astParent="031744D8" astOperand1="03174518" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174518" file="../source/system/internal/task.c" linenr="41" column="46" str="i" scope="02D85550" type="name" varId="4" variable="01CD2530" astParent="03174098" valueType-type="int" valueType-sign="signed"/>
+    <token id="03174798" file="../source/system/internal/task.c" linenr="41" column="47" str=")" scope="02D85550" link="03174398"/>
+    <token id="03174218" file="../source/system/internal/task.c" linenr="41" column="49" str="{" scope="02D855E8" link="03174118"/>
+    <token id="03174558" file="../source/system/internal/task.c" linenr="42" column="5" str="g_functions" scope="02D855E8" type="name" varId="2" variable="01CD2170" astParent="031742D8"/>
+    <token id="031742D8" file="../source/system/internal/task.c" linenr="42" column="16" str="[" scope="02D855E8" link="031745D8" astParent="03174618" astOperand1="03174558" astOperand2="03174598"/>
+    <token id="03174598" file="../source/system/internal/task.c" linenr="42" column="17" str="i" scope="02D855E8" type="name" varId="4" variable="01CD2530" astParent="031742D8" valueType-type="int" valueType-sign="signed"/>
+    <token id="031745D8" file="../source/system/internal/task.c" linenr="42" column="18" str="]" scope="02D855E8" link="031742D8"/>
+    <token id="03174618" file="../source/system/internal/task.c" linenr="42" column="19" str="(" scope="02D855E8" link="031747D8" astOperand1="031742D8"/>
+    <token id="031747D8" file="../source/system/internal/task.c" linenr="42" column="20" str=")" scope="02D855E8" link="03174618"/>
+    <token id="03174058" file="../source/system/internal/task.c" linenr="42" column="21" str=";" scope="02D855E8"/>
+    <token id="03174118" file="../source/system/internal/task.c" linenr="43" column="3" str="}" scope="02D855E8" link="03174218"/>
+    <token id="03174258" file="../source/system/internal/task.c" linenr="44" column="1" str="}" scope="02D85550" link="031741D8"/>
+  </tokenlist>
+  <scopes>
+    <scope id="02D85DA0" type="Global">
+      <functionList>
+        <function id="01D56590" tokenDef="03174A98" name="TASK_Initialize" type="Function"/>
+        <function id="01D566F0" tokenDef="03174BD8" name="TASK_Register" type="Function">
+          <arg nr="1" variable="01CD2270"/>
+        </function>
+        <function id="01D56170" tokenDef="03174318" name="TASK_Run" type="Function"/>
+      </functionList>
+      <varlist>
+        <var id="01CD2570"/>
+        <var id="01CD2170"/>
+      </varlist>
+    </scope>
+    <scope id="02D85E38" type="Function" className="TASK_Initialize" bodyStart="03174D58" bodyEnd="03174B98" nestedIn="02D85DA0" function="01D56590"/>
+    <scope id="02D862F8" type="Function" className="TASK_Register" bodyStart="03174C58" bodyEnd="03174158" nestedIn="02D85DA0" function="01D566F0"/>
+    <scope id="02D85550" type="Function" className="TASK_Run" bodyStart="031741D8" bodyEnd="03174258" nestedIn="02D85DA0" function="01D56170"/>
+    <scope id="02D855E8" type="For" bodyStart="03174218" bodyEnd="03174118" nestedIn="02D85550">
+      <varlist>
+        <var id="01CD2530"/>
+      </varlist>
+    </scope>
+  </scopes>
+  <variables>
+    <var id="01CD2170" nameToken="03174FD8" typeStartToken="02DAF6C8" typeEndToken="02DAF6C8" access="Global" scope="02D85DA0" constness="0" isArgument="false" isArray="true" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="true"/>
+    <var id="01CD2270" nameToken="03174C18" typeStartToken="03174DD8" typeEndToken="03174DD8" access="Argument" scope="02D862F8" constness="0" isArgument="true" isArray="false" isClass="true" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="01CD2530" nameToken="03174498" typeStartToken="03174698" typeEndToken="03174698" access="Local" scope="02D855E8" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="true" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="01CD2570" nameToken="02DAF588" typeStartToken="02DAFAC8" typeEndToken="02DAFAC8" access="Global" scope="02D85DA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="true"/>
+  </variables>
+  <valueflow>
+    <values id="01CCBC90">
+      <value intvalue="16" known="true"/>
+    </values>
+    <values id="01CCBDD0">
+      <value intvalue="0" known="true"/>
+    </values>
+    <values id="01CCBDA0">
+      <value intvalue="0" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>
