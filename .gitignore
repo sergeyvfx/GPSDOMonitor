@@ -56,17 +56,17 @@ fp-info-cache
 *.blend?
 
 # MPLAB-X build system.
-/Firmware/GPSDOMonitor.X/build/
-/Firmware/GPSDOMonitor.X/dist/
-/Firmware/GPSDOMonitor.X/disassembly/
+/GPSDOMonitor/firmware/GPSDOMonitor.X/build/
+/GPSDOMonitor/firmware/GPSDOMonitor.X/dist/
+/GPSDOMonitor/firmware/GPSDOMonitor.X/disassembly/
 
 # Build directory of sofware.
-/Firmware/build
+/GPSDOMonitor/firmware/build
 
 # Acquired text files.
-/tools/decode/stat
-/tools/decode/timecode
-/tools/decode/captures
+/GPSDOMonitor/tools/decode/stat
+/GPSDOMonitor/tools/decode/timecode
+/GPSDOMonitor/tools/decode/captures
 
 # Local copy of datasheets.
 /datasheet/
