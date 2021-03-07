@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>GPSDOMonitor</name>
+            <creation-uuid>daa38488-a747-4e32-8777-42c549fe6dbb</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions>h</header-extensions>
+            <asminc-extensions/>
+            <sourceEncoding>UTF-8</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>../source/app</sourceRootElem>
+                <sourceRootElem>../source/chip</sourceRootElem>
+                <sourceRootElem>../source/system</sourceRootElem>
+                <sourceRootElem>../../../../Электроника/GPSDO/Firmware/source/time</sourceRootElem>
+                <sourceRootElem>../source/time/internal</sourceRootElem>
+                <sourceRootElem>../source/time</sourceRootElem>
+                <sourceRootElem>../source/uart</sourceRootElem>
+                <sourceRootElem>../source/base</sourceRootElem>
+                <sourceRootElem>../source/math</sourceRootElem>
+                <sourceRootElem>../source/kernel</sourceRootElem>
+                <sourceRootElem>../source/gpsdo</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
