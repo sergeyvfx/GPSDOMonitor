@@ -1,0 +1,182 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Microcontroller:PIC18LF2550-ISO U1
+U 1 1 604E2F5D
+P 4750 3650
+F 0 "U1" H 5050 4600 50  0000 L BNN
+F 1 "PIC18LF2550-ISO" H 5050 4500 50  0000 L BNN
+F 2 "Package_SO:SOIC-28_Width7.50mm_Pitch1.27mm" H 6200 4600 50  0001 C CNN
+F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/39632e.pdf" H 6200 4600 50  0001 C CNN
+F 4 "IC MCU 8BIT 32KB FLASH 28SOIC" H 4750 3650 50  0001 C CNN "Description"
+F 5 "PIC PIC® 18F Microcontroller IC 8-Bit 48MHz 32KB (16K x 16) FLASH 28-SOIC" H 4750 3650 50  0001 C CNN "Detailed Description"
+F 6 "Microchip Technology" H 4750 3650 50  0001 C CNN "Manufacturer"
+F 7 "PIC18F2550T-I/SO" H 4750 3650 50  0001 C CNN "Manufacturer Part Number"
+F 8 "PIC18F2550T-I/SOCT-ND" H 4750 3650 50  0001 C CNN "Digi-Key Part Number"
+	1    4750 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 604E4DC3
+P 4700 4650
+F 0 "#PWR02" H 4700 4400 50  0001 C CNN
+F 1 "GND" H 4705 4477 50  0000 C CNN
+F 2 "" H 4700 4650 50  0001 C CNN
+F 3 "" H 4700 4650 50  0001 C CNN
+	1    4700 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 4650 4700 4550
+Wire Wire Line
+	4800 4550 4700 4550
+Connection ~ 4700 4550
+$Comp
+L power:+3V3 #PWR03
+U 1 1 604E5FFA
+P 4750 2650
+F 0 "#PWR03" H 4750 2500 50  0001 C CNN
+F 1 "+3V3" H 4765 2823 50  0000 C CNN
+F 2 "" H 4750 2650 50  0001 C CNN
+F 3 "" H 4750 2650 50  0001 C CNN
+	1    4750 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 2750 4750 2650
+$Comp
+L Crystal:ABM8W-20.0000MHZ-4-K1Z-T3 X1
+U 1 1 604E2C84
+P 2250 3900
+F 0 "X1" H 2450 4050 50  0000 L CNN
+F 1 "ABM8W-20.0000MHZ-4-K1Z-T3" H 2400 4175 50  0001 L BNN
+F 2 "Crystal:Crystal_SMD_4Pin_3.2x2.5mm" H 2650 3900 50  0001 C CNN
+F 3 "https://abracon.com/Resonators/ABM8W.pdf" H 2650 3900 50  0001 C CNN
+F 4 "CRYSTAL 20.0000MHZ 4PF SMD" H 2250 3900 50  0001 C CNN "Description"
+F 5 "20MHz ±10ppm Crystal 4pF 50 Ohms 4-SMD, No Lead" H 2250 3900 50  0001 C CNN "Detailed Description"
+F 6 "Abracon LLC" H 2250 3900 50  0001 C CNN "Manufacturer"
+F 7 "ABM8W-20.0000MHZ-4-K1Z-T3" H 2250 3900 50  0001 C CNN "Manufacturer Part Number"
+F 8 "535-14037-1-ND" H 2250 3900 50  0001 C CNN "Digi-Key Part Number"
+F 9 "20MHz" H 2450 3950 50  0000 L CNN "Frequency"
+	1    2250 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3900 2550 3900
+Wire Wire Line
+	3350 3800 2750 3800
+Wire Wire Line
+	2750 3800 2750 3600
+Wire Wire Line
+	2250 3700 2250 3650
+Wire Wire Line
+	2050 3650 2050 4150
+Wire Wire Line
+	2050 4150 2250 4150
+Wire Wire Line
+	2250 4150 2250 4100
+Wire Wire Line
+	2050 3650 2250 3650
+$Comp
+L power:GND #PWR01
+U 1 1 604E745B
+P 2250 4300
+F 0 "#PWR01" H 2250 4050 50  0001 C CNN
+F 1 "GND" H 2255 4127 50  0000 C CNN
+F 2 "" H 2250 4300 50  0001 C CNN
+F 3 "" H 2250 4300 50  0001 C CNN
+	1    2250 4300
+	1    0    0    -1  
+$EndComp
+Connection ~ 2250 4150
+$Comp
+L Capacitor_Ceramic:CBR04C409B5GAC C1
+U 1 1 604E374B
+P 1700 4100
+F 0 "C1" V 1654 4235 50  0000 L CNN
+F 1 "CBR04C409B5GAC" H 1550 4200 50  0001 L BNN
+F 2 "Capacitor_Ceramic:C_0402_1005Metric" H 1550 4300 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1030_CBR_SMD.pdf" H 1550 4300 50  0001 C CNN
+F 4 "CAP CER 4PF 50V C0G/NP0 0402" H 1700 4100 50  0001 C CNN "Description"
+F 5 "4pF ±0.1pF 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)" H 1700 4100 50  0001 C CNN "Detailed Description"
+F 6 "KEMET" H 1700 4100 50  0001 C CNN "Manufacturer"
+F 7 "CBR04C409B5GAC" H 1700 4100 50  0001 C CNN "Manufacturer Part Number"
+F 8 "399-13246-1-ND" H 1700 4100 50  0001 C CNN "Digi-Key Part Number"
+F 9 "4 pF" V 1745 4235 50  0000 L CNN "Capacitance"
+	1    1700 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Capacitor_Ceramic:CBR04C409B5GAC C2
+U 1 1 604E4BEB
+P 2550 4100
+F 0 "C2" V 2504 4235 50  0000 L CNN
+F 1 "CBR04C409B5GAC" H 2400 4200 50  0001 L BNN
+F 2 "Capacitor_Ceramic:C_0402_1005Metric" H 2400 4300 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1030_CBR_SMD.pdf" H 2400 4300 50  0001 C CNN
+F 4 "CAP CER 4PF 50V C0G/NP0 0402" H 2550 4100 50  0001 C CNN "Description"
+F 5 "4pF ±0.1pF 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)" H 2550 4100 50  0001 C CNN "Detailed Description"
+F 6 "KEMET" H 2550 4100 50  0001 C CNN "Manufacturer"
+F 7 "CBR04C409B5GAC" H 2550 4100 50  0001 C CNN "Manufacturer Part Number"
+F 8 "399-13246-1-ND" H 2550 4100 50  0001 C CNN "Digi-Key Part Number"
+F 9 "4 pF" V 2595 4235 50  0000 L CNN "Capacitance"
+	1    2550 4100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1700 3600 1700 3900
+Wire Wire Line
+	1700 3600 2750 3600
+Wire Wire Line
+	1700 3900 2100 3900
+Connection ~ 1700 3900
+Wire Wire Line
+	1700 3900 1700 3950
+Wire Wire Line
+	2550 3950 2550 3900
+Connection ~ 2550 3900
+Wire Wire Line
+	2550 3900 3350 3900
+$Comp
+L power:GND #PWR05
+U 1 1 604E699A
+P 2550 4300
+F 0 "#PWR05" H 2550 4050 50  0001 C CNN
+F 1 "GND" H 2555 4127 50  0000 C CNN
+F 2 "" H 2550 4300 50  0001 C CNN
+F 3 "" H 2550 4300 50  0001 C CNN
+	1    2550 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 604E7035
+P 1700 4300
+F 0 "#PWR04" H 1700 4050 50  0001 C CNN
+F 1 "GND" H 1705 4127 50  0000 C CNN
+F 2 "" H 1700 4300 50  0001 C CNN
+F 3 "" H 1700 4300 50  0001 C CNN
+	1    1700 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 4250 1700 4300
+Wire Wire Line
+	2250 4150 2250 4300
+Wire Wire Line
+	2550 4250 2550 4300
+$EndSCHEMATC
