@@ -179,4 +179,311 @@ Wire Wire Line
 	2250 4150 2250 4300
 Wire Wire Line
 	2550 4250 2550 4300
+$Comp
+L power:+5V #PWR0101
+U 1 1 6055F980
+P 7850 2800
+F 0 "#PWR0101" H 7850 2650 50  0001 C CNN
+F 1 "+5V" H 7865 2973 50  0000 C CNN
+F 2 "" H 7850 2800 50  0001 C CNN
+F 3 "" H 7850 2800 50  0001 C CNN
+	1    7850 2800
+	1    0    0    -1  
+$EndComp
+Text Notes 8640 3135 0    50   ~ 0
+24
+Text Notes 8640 3235 0    50   ~ 0
+23
+Text Notes 8640 3335 0    50   ~ 0
+22
+Text Notes 8640 3435 0    50   ~ 0
+21
+Text Notes 8640 3535 0    50   ~ 0
+20
+Text Notes 8640 3635 0    50   ~ 0
+19
+Text Notes 8640 3735 0    50   ~ 0
+18
+Text Notes 8640 3835 0    50   ~ 0
+17
+Text Notes 8640 3935 0    50   ~ 0
+16
+Text Notes 8640 4035 0    50   ~ 0
+15
+Text Notes 8640 4135 0    50   ~ 0
+14
+Text Notes 8640 4235 0    50   ~ 0
+13
+Text Notes 8640 4335 0    50   ~ 0
+12
+Text Notes 8640 4435 0    50   ~ 0
+11
+Text Notes 8640 4535 0    50   ~ 0
+10
+Text Notes 8640 4635 0    50   ~ 0
+9
+Text Notes 8640 4735 0    50   ~ 0
+8
+Text Notes 8640 4835 0    50   ~ 0
+7
+Text Notes 8640 4935 0    50   ~ 0
+6
+Text Notes 8640 5035 0    50   ~ 0
+5
+Text Notes 8640 5135 0    50   ~ 0
+4
+Text Notes 8640 5235 0    50   ~ 0
+3
+Text Notes 8640 5335 0    50   ~ 0
+2
+Text Notes 8640 5435 0    50   ~ 0
+1
+Wire Wire Line
+	7850 2800 7850 3000
+Text Notes 8465 3035 0    50   ~ 0
+50
+Text Notes 8465 3135 0    50   ~ 0
+49
+Text Notes 8465 3235 0    50   ~ 0
+48
+Text Notes 8465 3335 0    50   ~ 0
+47
+Text Notes 8465 3435 0    50   ~ 0
+46
+Text Notes 8465 3535 0    50   ~ 0
+45
+Text Notes 8465 3635 0    50   ~ 0
+44
+Text Notes 8465 3735 0    50   ~ 0
+43
+Text Notes 8465 3835 0    50   ~ 0
+42
+Text Notes 8465 3935 0    50   ~ 0
+41
+Text Notes 8465 4035 0    50   ~ 0
+40
+Text Notes 8465 4135 0    50   ~ 0
+39
+Text Notes 8465 4235 0    50   ~ 0
+38
+Text Notes 8465 4335 0    50   ~ 0
+37
+Text Notes 8465 4435 0    50   ~ 0
+36
+Text Notes 8465 4535 0    50   ~ 0
+35
+Text Notes 8465 4635 0    50   ~ 0
+34
+Text Notes 8465 4735 0    50   ~ 0
+33
+Text Notes 8465 4835 0    50   ~ 0
+32
+Text Notes 8465 4935 0    50   ~ 0
+31
+Text Notes 8465 5035 0    50   ~ 0
+30
+Text Notes 8465 5135 0    50   ~ 0
+29
+Text Notes 8465 5235 0    50   ~ 0
+28
+Text Notes 8465 5335 0    50   ~ 0
+27
+Text Notes 8465 5435 0    50   ~ 0
+26
+Wire Wire Line
+	7850 3600 8200 3600
+Wire Wire Line
+	8200 3500 7850 3500
+Connection ~ 7850 3500
+Wire Wire Line
+	7850 3500 7850 3600
+Wire Wire Line
+	8200 3400 7850 3400
+Connection ~ 7850 3400
+Wire Wire Line
+	7850 3400 7850 3500
+Wire Wire Line
+	8200 3300 7850 3300
+Connection ~ 7850 3300
+Wire Wire Line
+	7850 3300 7850 3400
+Wire Wire Line
+	8200 3200 7850 3200
+Connection ~ 7850 3200
+Wire Wire Line
+	7850 3200 7850 3300
+Wire Wire Line
+	8200 3100 7850 3100
+Connection ~ 7850 3100
+Wire Wire Line
+	7850 3100 7850 3200
+Wire Wire Line
+	8200 3000 7850 3000
+Connection ~ 7850 3000
+Wire Wire Line
+	7850 3000 7850 3100
+Text Notes 8640 3035 0    50   ~ 0
+25
+$Comp
+L Connector_Data:F31S-1A7L1-11050 J1
+U 1 1 6055EFBD
+P 8600 2850
+F 0 "J1" H 8600 2965 50  0000 C CNN
+F 1 "F31S-1A7L1-11050" H 8600 2874 50  0000 C CNN
+F 2 "Connector_Data:F31S-1A7L1-11050" H 8600 2850 50  0001 C CNN
+F 3 "https://www.amphenol-icc.com/media/wysiwyg/files/documentation/datasheet/flex/ffc_fpc_050mm_f31s.pdf" H 8600 2850 50  0001 C CNN
+F 4 "FLEX CONNECTOR, 0.50MM PITCH, HE" H 8600 2850 50  0001 C CNN "Description"
+F 5 "50 Position FFC, FPC Connector Contacts, Vertical - 1 Sided 0.020\" (0.50mm) Surface Mount" H 8600 2850 50  0001 C CNN "Detailed Description"
+F 6 "Amphenol ICC (FCI)" H 8600 2850 50  0001 C CNN "Manufacturer"
+F 7 "F31S-1A7L1-11050" H 8600 2850 50  0001 C CNN "Manufacturer Part Number"
+F 8 "609-F31S-1A7L1-11050CT-ND" H 8600 2850 50  0001 C CNN "Digi-Key Part Number"
+F 9 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/f31s.pdf" H 8600 2850 50  0001 C CNN "Drawing"
+	1    8600 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 3800 7850 3800
+Wire Wire Line
+	7850 3800 7850 3900
+Wire Wire Line
+	8200 3900 7850 3900
+Connection ~ 7850 3900
+Wire Wire Line
+	7850 3900 7850 4000
+Wire Wire Line
+	8200 4000 7850 4000
+Connection ~ 7850 4000
+Wire Wire Line
+	7850 4000 7850 4200
+Wire Wire Line
+	8200 4200 7850 4200
+Connection ~ 7850 4200
+Wire Wire Line
+	7850 4200 7850 4500
+Wire Wire Line
+	8200 4500 7850 4500
+Connection ~ 7850 4500
+Wire Wire Line
+	7850 4500 7850 4800
+Wire Wire Line
+	8200 4800 7850 4800
+Connection ~ 7850 4800
+Wire Wire Line
+	7850 4800 7850 5000
+Wire Wire Line
+	8200 5000 7850 5000
+Connection ~ 7850 5000
+Wire Wire Line
+	7850 5000 7850 5200
+Wire Wire Line
+	8200 5200 7850 5200
+Connection ~ 7850 5200
+Wire Wire Line
+	7850 5200 7850 5400
+Wire Wire Line
+	8200 5400 7850 5400
+Connection ~ 7850 5400
+Wire Wire Line
+	7850 5400 7850 5550
+$Comp
+L power:GND #PWR0102
+U 1 1 6057C2D6
+P 7850 5550
+F 0 "#PWR0102" H 7850 5300 50  0001 C CNN
+F 1 "GND" H 7855 5377 50  0000 C CNN
+F 2 "" H 7850 5550 50  0001 C CNN
+F 3 "" H 7850 5550 50  0001 C CNN
+	1    7850 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 6058360B
+P 9400 5550
+F 0 "#PWR0103" H 9400 5300 50  0001 C CNN
+F 1 "GND" H 9405 5377 50  0000 C CNN
+F 2 "" H 9400 5550 50  0001 C CNN
+F 3 "" H 9400 5550 50  0001 C CNN
+	1    9400 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9400 5400 9400 5550
+Wire Wire Line
+	9000 5400 9400 5400
+Wire Wire Line
+	9000 5200 9400 5200
+Wire Wire Line
+	9400 5200 9400 5400
+Connection ~ 9400 5400
+Wire Wire Line
+	9000 5000 9400 5000
+Wire Wire Line
+	9400 5000 9400 5200
+Connection ~ 9400 5200
+Wire Wire Line
+	9000 4800 9400 4800
+Wire Wire Line
+	9400 4800 9400 5000
+Connection ~ 9400 5000
+Wire Wire Line
+	9000 4600 9400 4600
+Wire Wire Line
+	9400 4600 9400 4800
+Connection ~ 9400 4800
+Wire Wire Line
+	9000 4400 9400 4400
+Wire Wire Line
+	9400 4400 9400 4600
+Connection ~ 9400 4600
+Wire Wire Line
+	9000 3800 9400 3800
+Wire Wire Line
+	9400 3800 9400 4400
+Connection ~ 9400 4400
+Wire Wire Line
+	9000 3500 9400 3500
+Wire Wire Line
+	9400 3500 9400 3800
+Connection ~ 9400 3800
+Wire Wire Line
+	9000 3300 9400 3300
+Wire Wire Line
+	9400 3300 9400 3500
+Connection ~ 9400 3500
+Wire Wire Line
+	9000 3100 9400 3100
+Wire Wire Line
+	9400 3100 9400 3300
+Connection ~ 9400 3300
+Wire Wire Line
+	9000 5300 9900 5300
+Text GLabel 9900 5300 2    50   Input ~ 0
+UART4_TX
+Text GLabel 9900 3400 2    50   Input ~ 0
+PP2S
+Wire Wire Line
+	9000 3400 9900 3400
+Text GLabel 9900 3200 2    50   Input ~ 0
+10MHz
+Wire Wire Line
+	9000 3200 9900 3200
+Text GLabel 7550 4700 0    50   Input ~ 0
+UART2_RxD_HV
+Wire Wire Line
+	8200 4700 7550 4700
+Text GLabel 7550 4600 0    50   Input ~ 0
+UART2_TxD_HV
+Wire Wire Line
+	8200 4600 7550 4600
+Text GLabel 7550 4400 0    50   Input ~ 0
+UART3_RxD
+Text GLabel 7550 4300 0    50   Input ~ 0
+UART3_TxD
+Wire Wire Line
+	7550 4300 8200 4300
+Wire Wire Line
+	8200 4400 7550 4400
+Text Notes 9200 3000 0    50   ~ 0
+NOTE: The blue numbers are the\npin numbers on the GPSDO side.
 $EndSCHEMATC
