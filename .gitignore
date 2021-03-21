@@ -29,7 +29,7 @@ Desktop.ini
 
 # KiCAD cache files.
 fp-info-cache
-
+*-cache.lib
 
 *-save.pro
 *-save.kicad_pcb
