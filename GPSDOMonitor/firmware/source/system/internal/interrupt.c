@@ -219,6 +219,12 @@ void __interrupt(high_priority) INTERRUPT_InterruptHigh(void) {
 
   // TODO(sergey): Consider switching this to assembly as well.
 
+  // Sanity check: the interrupt is supposed to be called for only PortB
+  // changes. All the rest of the interrupts are to be handled as low priority.
+  if (!INTCONbits.RBIF) {
+    KERNEL_PanicInInterrupt();
+  }
+
 #if USE_HARDCODED_ISR
   g_high_interrupts.isr_0();
 #else
@@ -227,6 +233,11 @@ void __interrupt(high_priority) INTERRUPT_InterruptHigh(void) {
     g_high_interrupts.functions[i]();
   }
 #endif
+
+  // The ISR is supposed to clear the interrupt flag.
+  if (INTCONbits.RBIF) {
+    KERNEL_PanicInInterrupt();
+  }
 }
 
 #undef READ_BIT

@@ -29,3 +29,10 @@ void KERNEL_Panic(void) {
     // TODO(sergey): Add support of panic LED blink.
   }
 }
+
+void KERNEL_PanicInInterrupt(void) {
+  // TODO(sergey): Shouldn't really be stalling the interrupt. But how to
+  // communicate an unrecoverable error?
+  while (true) {
+  }
+}

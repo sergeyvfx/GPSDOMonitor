@@ -28,4 +28,7 @@
 // Use this when an unrecoverable issue was detected.
 void KERNEL_Panic(void);
 
+// A fatal unrecoverable error has been detected from an interrupt.
+void KERNEL_PanicInInterrupt(void);
+
 #endif  // KERNEL_H_
