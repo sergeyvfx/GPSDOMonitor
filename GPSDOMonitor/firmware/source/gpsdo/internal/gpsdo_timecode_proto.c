@@ -88,7 +88,7 @@ static Context g_context;
 // Interrupt handlers.
 
 static inline void InterruptHandler_PortB(void) {
-  if (!INTCONbits.RBIF && INTCONbits.RBIE) {
+  if (!INTCONbits.RBIF || !INTCONbits.RBIE) {
     // The Port B did not change.
     return;
   }
