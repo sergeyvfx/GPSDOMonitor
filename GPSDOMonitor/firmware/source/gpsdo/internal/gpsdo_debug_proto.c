@@ -37,6 +37,14 @@
 // investigation.
 #define DATA_BUFFER_SIZE 64
 
+// Configure TMR3 to generate interrupt much less frequent than character will
+// appear on GPSDO's debug UART.
+//
+// For the current chip selection it is 183.82 Hz (0.00544sec intervals).
+//
+// NOTE: Same timer is used to detect that data transmission is over.
+#define TIMER3_VALUE 54656
+
 // Machine states of the debug protocol receiver.
 typedef enum MachineState {
   // Initial state.
@@ -98,9 +106,9 @@ static Context g_context;
 
 #define TIMER_RESET()                                                          \
   do {                                                                         \
-    T2CONbits.TMR2ON = 0;                                                      \
-    TMR2 = 0;                                                                  \
-    T2CONbits.TMR2ON = 1;                                                      \
+    T3CONbits.TMR3ON = 0;                                                      \
+    TMR3 = TIMER3_VALUE;                                                       \
+    T3CONbits.TMR3ON = 1;                                                      \
   } while (false)
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -156,9 +164,9 @@ static void InterruptHandler(void) {
     PIR1bits.RCIF = 0;  // Clear the interrupt flag.
   }
 
-  // Timer2 interrupt.
+  // Timer3 interrupt.
 
-  if (PIR1bits.TMR2IF && PIE1bits.TMR2IE) {
+  if (PIR2bits.TMR3IF && PIE2bits.TMR3IE) {
     switch (g_context.machine_state) {
       case MAECHINE_STATE_INITIALIZE:
         // pass.
@@ -194,7 +202,7 @@ static void InterruptHandler(void) {
         break;
     }
 
-    PIR1bits.TMR2IF = 0;  // Clear the interrupt flag.
+    PIR2bits.TMR3IF = 0;  // Clear the interrupt flag.
   }
 }
 
@@ -252,20 +260,16 @@ static void Tasks(void) {
 static void InitializeTimer(void) {
   // Timer configuration.
 
-  // Configure TMR2 to generate interrupt much less frequent than character will
-  // appear on GPSDO's debug UART.
-  //
-  // For the current chip selection it is 183.82 Hz (0.00544sec intervals).
-  //
-  // NOTE: Same timer is used to detect that data transmission is over.
-  TMR2 = 0;
-  PR2 = 255;
+  TMR3 = TIMER3_VALUE;
 
-  // Set TMR2 pre-scaler to 1:16.
-  T2CONbits.T2CKPS = 0b10;
+  // Set prescaler to 1:1.
+  T3CONbits.T3CKPS0 = 0;
+  T3CONbits.T3CKPS1 = 0;
 
-  // Set TMR2 post-scaler to 1:16.
-  T2CONbits.TOUTPS = 0b1111;
+  T3CONbits.T3SYNC = 1;  // Do not synchronize external clock input.
+
+  // Timer3 Clock Source Select bit to Internal clock (Fosc/4)
+  T3CONbits.TMR3CS = 0;
 
   // Interrupts.
 
@@ -276,15 +280,15 @@ static void InitializeTimer(void) {
   RCONbits.IPEN = 1;  // Interrupt Priority Enable bit:
                       // Enable priority levels on interrupt.
 
-  IPR1bits.TMR2IP = 0;  // TMR2 to PR2 Match Interrupt Priority bit:
+  IPR2bits.TMR3IP = 0;  // TMR3 TMR3 Overflow Interrupt Priority bit:
                         // Low priority.
 
-  PIR1bits.TMR2IF = 0;
-  PIE1bits.TMR2IE = 1;  // Enable Timer2 Overflow Interrupt.
+  PIE2bits.TMR3IE = 1;
+  PIR2bits.TMR3IF = 0;  // Enable Timer2 Overflow Interrupt.
 
   INTCONbits.GIEL = 1;  // Enables all low priority peripheral interrupts.
 
-  T2CONbits.TMR2ON = 0;
+  T3CONbits.TMR3ON = 0;
 }
 
 static void InitializeUARTReceive(void) {
