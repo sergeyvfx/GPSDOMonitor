@@ -215,6 +215,43 @@ static void APP_Initialize(void) {
 }
 
 static void APP_StartUp(void) {
+  // 1. Set the PWM period by writing to the PR2 register.
+  //
+  //   PR2 = PWM Period / (4 * Tosc * (TMR2 Prescale Value)) - 1
+  //   PR2 = Fosc / (4 * Fpwm * (TMR2 Prescale Value)) - 1
+
+  // From formula above calculated for 100KHz PWM frequency, Tosc based on 48MHz
+  // Fosc, TMR2 prescale value of 4.
+  PR2 = 29;
+
+  // 2. Set the PWM duty cycle by writing to the CCPRxL register and
+  //    CCPxCON<5:4> bits.
+  //
+  //   (CCPRxL:CCPxCON<5:4>) = PWM Duty Cycle / (Tosc * (TMR2 Prescale Value))
+  //
+  // NOTE: Duty cycle is measured in time, not in percentage.
+
+  // From formula above calculated for 50%, Tosc based on 48MHz
+  // Fosc, TMR2 prescale value of 4.
+  const uint16_t ccp_duty_cycle = 60;
+
+  CCP1CONbits.DC1B = ccp_duty_cycle & 0b00000011;
+  CCPR1L = (ccp_duty_cycle >> 2) & 0xff;
+
+  // 3. Make the CCPx pin an output by clearing the appropriate TRIS bit.
+  TRISCbits.RC2 = 0;
+
+  // 4. Set the TMR2 prescale value, then enable Timer2 by writing to T2CON.
+
+  T2CONbits.TOUTPS = 0;  // No post-scaler.
+  T2CONbits.T2CKPS = 1;  // Pre-scaler of 4.
+
+  // 5. Configure the CCPx module for PWM operation.
+  CCP1CONbits.CCP1M = 0b1100;
+
+  // 6. Start the PWM.
+  TMR2 = 0;
+  T2CONbits.TMR2ON = 1;
 }
 
 void main(void) {
