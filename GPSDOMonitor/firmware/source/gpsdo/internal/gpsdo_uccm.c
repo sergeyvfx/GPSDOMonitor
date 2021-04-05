@@ -97,10 +97,15 @@ bool GPSDO_UCCM_UpdateFromDebugProto(GPSDOStatus* status,
   }
 
   const uint8_t flags[4] = {data[33], data[34], data[35], data[36]};
-  const uint32_t gps_time_bytes[4] = {data[30], data[29], data[28], data[27]};
 
   UpdateFromFlags(status, flags);
-  UpdateGPSTime(status, gps_time_bytes);
+
+  // NOTE: Do not update timecode from the debug protocol as it is setting the
+  // time one second in advance, conflicting with the real timecode data.
+  //
+  // const uint32_t gps_time_bytes[4] = {data[30], data[29], data[28],
+  // data[27]};
+  // UpdateGPSTime(status, gps_time_bytes);
 
   status->gps_utc_offset = data[32];
 
