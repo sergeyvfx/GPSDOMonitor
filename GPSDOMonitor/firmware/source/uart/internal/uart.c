@@ -171,7 +171,7 @@ bool UART_Open(UARTOptions* options) {
   PIR1bits.RCIF = 0;   // Clear RX interrupt flag.
 
   INTCONbits.GIEH = 1;  // Enable Global Interrupt.
-  INTCONbits.PEIE = 1;  // Peripheral Interrupt Enable bit (required for TMR2).
+  INTCONbits.PEIE = 1;  // Peripheral Interrupt Enable bit.
 
   return true;
 }
