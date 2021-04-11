@@ -453,10 +453,10 @@ UART3_TxD
 Wire Wire Line
 	5450 2450 5800 2450
 $Comp
-L Power:+5V5 #PWR027
+L Power:+5V5 #PWR033
 U 1 1 605767A4
 P 11950 1100
-F 0 "#PWR027" H 11950 950 50  0001 C CNN
+F 0 "#PWR033" H 11950 950 50  0001 C CNN
 F 1 "+5V5" H 11965 1273 50  0000 C CNN
 F 2 "" H 11950 1100 50  0001 C CNN
 F 3 "" H 11950 1100 50  0001 C CNN
@@ -464,10 +464,10 @@ F 3 "" H 11950 1100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power:GND #PWR028
+L Power:GND #PWR034
 U 1 1 605774B0
 P 11950 3850
-F 0 "#PWR028" H 11950 3650 50  0001 C CNN
+F 0 "#PWR034" H 11950 3650 50  0001 C CNN
 F 1 "GND" H 11955 3727 50  0000 C CNN
 F 2 "" H 11950 3850 50  0001 C CNN
 F 3 "" H 11950 3850 50  0001 C CNN
@@ -475,10 +475,10 @@ F 3 "" H 11950 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power:GND #PWR029
+L Power:GND #PWR036
 U 1 1 60577A8A
 P 13500 3850
-F 0 "#PWR029" H 13500 3650 50  0001 C CNN
+F 0 "#PWR036" H 13500 3650 50  0001 C CNN
 F 1 "GND" H 13505 3727 50  0000 C CNN
 F 2 "" H 13500 3850 50  0001 C CNN
 F 3 "" H 13500 3850 50  0001 C CNN
@@ -1563,54 +1563,33 @@ $EndComp
 $Comp
 L Transistor_BJT:MMBT3904LT1G Q1
 U 1 1 607BF18C
-P 7300 7550
-F 0 "Q1" H 7492 7596 50  0000 L CNN
-F 1 "MMBT3904LT1G" H 7490 7550 50  0001 L BNN
-F 2 "Package_TO_SOT:SOT-23" H 7300 7550 50  0001 C CNN
-F 3 "https://www.onsemi.com/pdf/datasheet/mmbt3904lt1-d.pdf" H 7300 7550 50  0001 C CNN
-F 4 "TRANS NPN 40V 200MA SOT23-3" H 7300 7550 50  0001 C CNN "Description"
-F 5 "Bipolar (BJT) Transistor NPN 40V 200mA 300MHz 300mW Surface Mount SOT-23-3 (TO-236)" H 7300 7550 50  0001 C CNN "Detailed Description"
-F 6 "ON Semiconductor" H 7300 7550 50  0001 C CNN "Manufacturer"
-F 7 "MMBT3904LT1G" H 7300 7550 50  0001 C CNN "Manufacturer Part Number"
-F 8 "MMBT3904LT1GOSCT-ND" H 7300 7550 50  0001 C CNN "Digi-Key Part Number"
-F 9 "MMBT3904" H 7492 7505 50  0000 L CNN "Base Part Number"
-	1    7300 7550
+P 7300 7900
+F 0 "Q1" H 7492 7946 50  0000 L CNN
+F 1 "MMBT3904LT1G" H 7490 7900 50  0001 L BNN
+F 2 "Package_TO_SOT:SOT-23" H 7300 7900 50  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/mmbt3904lt1-d.pdf" H 7300 7900 50  0001 C CNN
+F 4 "TRANS NPN 40V 200MA SOT23-3" H 7300 7900 50  0001 C CNN "Description"
+F 5 "Bipolar (BJT) Transistor NPN 40V 200mA 300MHz 300mW Surface Mount SOT-23-3 (TO-236)" H 7300 7900 50  0001 C CNN "Detailed Description"
+F 6 "ON Semiconductor" H 7300 7900 50  0001 C CNN "Manufacturer"
+F 7 "MMBT3904LT1G" H 7300 7900 50  0001 C CNN "Manufacturer Part Number"
+F 8 "MMBT3904LT1GOSCT-ND" H 7300 7900 50  0001 C CNN "Digi-Key Part Number"
+F 9 "MMBT3904" H 7492 7855 50  0000 L CNN "Base Part Number"
+	1    7300 7900
 	1    0    0    -1  
 $EndComp
 $Comp
 L Power:GND #PWR024
 U 1 1 607C0831
-P 7400 7800
-F 0 "#PWR024" H 7400 7600 50  0001 C CNN
-F 1 "GND" H 7405 7677 50  0000 C CNN
-F 2 "" H 7400 7800 50  0001 C CNN
-F 3 "" H 7400 7800 50  0001 C CNN
-	1    7400 7800
+P 7400 8150
+F 0 "#PWR024" H 7400 7950 50  0001 C CNN
+F 1 "GND" H 7405 8027 50  0000 C CNN
+F 2 "" H 7400 8150 50  0001 C CNN
+F 3 "" H 7400 8150 50  0001 C CNN
+	1    7400 8150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7400 7750 7400 7800
-Wire Wire Line
-	7400 6950 7400 7150
-Wire Wire Line
-	7400 7150 8000 7150
-Wire Wire Line
-	8000 7150 8000 6950
-Connection ~ 7400 7150
-Wire Wire Line
-	7400 7150 7400 7350
-Wire Wire Line
-	8000 7150 8650 7150
-Wire Wire Line
-	8650 7150 8650 6950
-Connection ~ 8000 7150
-Wire Wire Line
-	8650 7150 9250 7150
-Wire Wire Line
-	9250 7150 9250 6950
-Connection ~ 8650 7150
-Wire Wire Line
-	11050 7150 11050 6950
+	7400 8100 7400 8150
 $Comp
 L LED:5977703607F D8
 U 1 1 607563CE
@@ -1686,55 +1665,46 @@ F 29 "10MHZ" V 12500 6700 50  0000 C CNN "Label"
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	11050 7150 11600 7150
-Wire Wire Line
-	11600 7150 11600 6950
-Wire Wire Line
-	11600 7150 12200 7150
-Wire Wire Line
-	12200 7150 12200 6950
-Connection ~ 11600 7150
-Wire Wire Line
 	2650 2650 2200 2650
 Text Label 2200 2650 0    50   ~ 0
 LED_PWM
 $Comp
 L Resistor:CRGCQ0402F1K0 R6
 U 1 1 60734268
-P 6900 7650
-F 0 "R6" V 6593 7650 50  0000 C CNN
-F 1 "CRGCQ0402F1K0" H 6850 7650 50  0001 L BNN
-F 2 "Resistor:R_0402_1005Metric" H 6900 7650 50  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 6900 7650 50  0001 C CNN
-F 4 "CRGCQ 0402 1K0 1%" H 6900 7650 50  0001 C CNN "Description"
-F 5 "1 kOhms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 6900 7650 50  0001 C CNN "Detailed Description"
-F 6 "TE Connectivity Passive Product" H 6900 7650 50  0001 C CNN "Manufacturer"
-F 7 "CRGCQ0402F1K0" H 6900 7650 50  0001 C CNN "Manufacturer Part Number"
-F 8 "A129627CT-ND" H 6900 7650 50  0001 C CNN "Digi-Key Part Number"
-F 9 "1k" V 6684 7650 50  0000 C CNN "Resistance"
-F 10 "CRGCQ" H 6900 7650 50  0001 C CNN "Series"
-F 11 "Cut Tape (CT)" H 6900 7650 50  0001 C CNN "Packaging"
-F 12 "±1%" H 6900 7650 50  0001 C CNN "Tolerance"
-F 13 "0.063W, 1/16W" H 6900 7650 50  0001 C CNN "Power (Watts)"
-F 14 "Thick Film" H 6900 7650 50  0001 C CNN "Composition"
-F 15 "Automotive AEC-Q200, Moisture Resistant" H 6900 7650 50  0001 C CNN "Features"
-F 16 "±100ppm/°C" H 6900 7650 50  0001 C CNN "Temperature Coefficient"
-F 17 "-55°C ~ 155°C" H 6900 7650 50  0001 C CNN "Operating Temperature"
-F 18 "0402 (1005 Metric)" H 6900 7650 50  0001 C CNN "Package / Case"
-F 19 "AEC-Q200" H 6900 7650 50  0001 C CNN "Ratings"
-F 20 "0402" H 6900 7650 50  0001 C CNN "Supplier Device Package"
-F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 6900 7650 50  0001 C CNN "Size / Dimension"
-F 22 "0.016\" (0.40mm)" H 6900 7650 50  0001 C CNN "Height - Seated (Max)"
-F 23 "2" H 6900 7650 50  0001 C CNN "Number of Terminations"
-F 24 "CRGCQ0402" H 6900 7650 50  0001 C CNN "Base Part Number"
-	1    6900 7650
+P 6900 8000
+F 0 "R6" V 6593 8000 50  0000 C CNN
+F 1 "CRGCQ0402F1K0" H 6850 8000 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 6900 8000 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 6900 8000 50  0001 C CNN
+F 4 "CRGCQ 0402 1K0 1%" H 6900 8000 50  0001 C CNN "Description"
+F 5 "1 kOhms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 6900 8000 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 6900 8000 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F1K0" H 6900 8000 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129627CT-ND" H 6900 8000 50  0001 C CNN "Digi-Key Part Number"
+F 9 "1k" V 6684 8000 50  0000 C CNN "Resistance"
+F 10 "CRGCQ" H 6900 8000 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 6900 8000 50  0001 C CNN "Packaging"
+F 12 "±1%" H 6900 8000 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 6900 8000 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 6900 8000 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 6900 8000 50  0001 C CNN "Features"
+F 16 "±100ppm/°C" H 6900 8000 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 6900 8000 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 6900 8000 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 6900 8000 50  0001 C CNN "Ratings"
+F 20 "0402" H 6900 8000 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 6900 8000 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 6900 8000 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 6900 8000 50  0001 C CNN "Number of Terminations"
+F 24 "CRGCQ0402" H 6900 8000 50  0001 C CNN "Base Part Number"
+	1    6900 8000
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7050 7550 7100 7550
+	7050 7900 7100 7900
 Wire Wire Line
-	6750 7550 6400 7550
-Text Label 6400 7550 0    50   ~ 0
+	6750 7900 6400 7900
+Text Label 6400 7900 0    50   ~ 0
 LED_PWM
 $Comp
 L Logic:SN74HC595BRWNR U4
@@ -1795,10 +1765,6 @@ F 21 "74HC595" H 10400 4950 50  0001 C CNN "Base Part Number"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9250 7150 11050 7150
-Connection ~ 9250 7150
-Connection ~ 11050 7150
-Wire Wire Line
 	9600 5950 9600 5050
 Wire Wire Line
 	9600 5050 9900 5050
@@ -1837,10 +1803,10 @@ Wire Wire Line
 Wire Wire Line
 	9400 5350 9400 4300
 $Comp
-L Power:+3V3 #PWR025
+L Power:+3V3 #PWR028
 U 1 1 609480DA
 P 9400 4300
-F 0 "#PWR025" H 9400 4150 50  0001 C CNN
+F 0 "#PWR028" H 9400 4150 50  0001 C CNN
 F 1 "+3V3" H 9415 4473 50  0000 C CNN
 F 2 "" H 9400 4300 50  0001 C CNN
 F 3 "" H 9400 4300 50  0001 C CNN
@@ -1863,10 +1829,10 @@ F 3 "" H 5700 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power:GND #PWR026
+L Power:GND #PWR030
 U 1 1 609581E2
 P 10400 6200
-F 0 "#PWR026" H 10400 6000 50  0001 C CNN
+F 0 "#PWR030" H 10400 6000 50  0001 C CNN
 F 1 "GND" H 10405 6077 50  0000 C CNN
 F 2 "" H 10400 6200 50  0001 C CNN
 F 3 "" H 10400 6200 50  0001 C CNN
@@ -2033,4 +1999,591 @@ Wire Wire Line
 	1400 8950 1400 9450
 Wire Wire Line
 	1750 8950 1750 9050
+$Comp
+L Power:GND #PWR025
+U 1 1 60781A64
+P 7600 7450
+F 0 "#PWR025" H 7600 7250 50  0001 C CNN
+F 1 "GND" H 7605 7327 50  0000 C CNN
+F 2 "" H 7600 7450 50  0001 C CNN
+F 3 "" H 7600 7450 50  0001 C CNN
+	1    7600 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Power:GND #PWR026
+U 1 1 607823C2
+P 8200 7450
+F 0 "#PWR026" H 8200 7250 50  0001 C CNN
+F 1 "GND" H 8205 7327 50  0000 C CNN
+F 2 "" H 8200 7450 50  0001 C CNN
+F 3 "" H 8200 7450 50  0001 C CNN
+	1    8200 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Power:GND #PWR027
+U 1 1 6078280C
+P 8850 7450
+F 0 "#PWR027" H 8850 7250 50  0001 C CNN
+F 1 "GND" H 8855 7327 50  0000 C CNN
+F 2 "" H 8850 7450 50  0001 C CNN
+F 3 "" H 8850 7450 50  0001 C CNN
+	1    8850 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Power:GND #PWR029
+U 1 1 60782E1F
+P 9450 7450
+F 0 "#PWR029" H 9450 7250 50  0001 C CNN
+F 1 "GND" H 9455 7327 50  0000 C CNN
+F 2 "" H 9450 7450 50  0001 C CNN
+F 3 "" H 9450 7450 50  0001 C CNN
+	1    9450 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Power:GND #PWR031
+U 1 1 6078411D
+P 11250 7450
+F 0 "#PWR031" H 11250 7250 50  0001 C CNN
+F 1 "GND" H 11255 7327 50  0000 C CNN
+F 2 "" H 11250 7450 50  0001 C CNN
+F 3 "" H 11250 7450 50  0001 C CNN
+	1    11250 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Power:GND #PWR032
+U 1 1 6078494E
+P 11800 7450
+F 0 "#PWR032" H 11800 7250 50  0001 C CNN
+F 1 "GND" H 11805 7327 50  0000 C CNN
+F 2 "" H 11800 7450 50  0001 C CNN
+F 3 "" H 11800 7450 50  0001 C CNN
+	1    11800 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Power:GND #PWR035
+U 1 1 60784E04
+P 12400 7450
+F 0 "#PWR035" H 12400 7250 50  0001 C CNN
+F 1 "GND" H 12405 7327 50  0000 C CNN
+F 2 "" H 12400 7450 50  0001 C CNN
+F 3 "" H 12400 7450 50  0001 C CNN
+	1    12400 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R7
+U 1 1 6082DB39
+P 7500 7200
+F 0 "R7" H 7350 7250 50  0000 R CNN
+F 1 "CRGCQ0402F68R" H 7450 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 7500 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 7500 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 7500 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 7500 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 7500 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 7500 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 7500 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 7350 7150 50  0000 R CNN "Resistance"
+F 10 "CRGCQ" H 7500 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 7500 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 7500 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 7500 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 7500 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 7500 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 7500 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 7500 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 7500 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 7500 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 7500 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 7500 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 7500 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 7500 7200 50  0001 C CNN "Number of Terminations"
+	1    7500 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R8
+U 1 1 608300A8
+P 7700 7200
+F 0 "R8" H 7650 7250 50  0000 L CNN
+F 1 "CRGCQ0402F68R" H 7650 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 7700 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 7700 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 7700 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 7700 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 7700 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 7700 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 7700 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 7650 7150 50  0000 L CNN "Resistance"
+F 10 "CRGCQ" H 7700 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 7700 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 7700 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 7700 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 7700 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 7700 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 7700 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 7700 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 7700 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 7700 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 7700 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 7700 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 7700 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 7700 7200 50  0001 C CNN "Number of Terminations"
+	1    7700 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R9
+U 1 1 608365AF
+P 8100 7200
+F 0 "R9" H 7950 7250 50  0000 R CNN
+F 1 "CRGCQ0402F68R" H 8050 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 8100 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 8100 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 8100 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 8100 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 8100 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 8100 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 8100 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 7950 7150 50  0000 R CNN "Resistance"
+F 10 "CRGCQ" H 8100 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 8100 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 8100 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 8100 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 8100 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 8100 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 8100 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 8100 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 8100 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 8100 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 8100 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 8100 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 8100 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 8100 7200 50  0001 C CNN "Number of Terminations"
+	1    8100 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R10
+U 1 1 608365C9
+P 8300 7200
+F 0 "R10" H 8250 7250 50  0000 L CNN
+F 1 "CRGCQ0402F68R" H 8250 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 8300 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 8300 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 8300 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 8300 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 8300 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 8300 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 8300 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 8250 7150 50  0000 L CNN "Resistance"
+F 10 "CRGCQ" H 8300 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 8300 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 8300 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 8300 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 8300 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 8300 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 8300 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 8300 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 8300 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 8300 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 8300 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 8300 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 8300 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 8300 7200 50  0001 C CNN "Number of Terminations"
+	1    8300 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R11
+U 1 1 60845ECC
+P 8750 7200
+F 0 "R11" H 8600 7250 50  0000 R CNN
+F 1 "CRGCQ0402F68R" H 8700 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 8750 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 8750 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 8750 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 8750 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 8750 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 8750 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 8750 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 8600 7150 50  0000 R CNN "Resistance"
+F 10 "CRGCQ" H 8750 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 8750 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 8750 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 8750 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 8750 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 8750 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 8750 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 8750 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 8750 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 8750 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 8750 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 8750 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 8750 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 8750 7200 50  0001 C CNN "Number of Terminations"
+	1    8750 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R12
+U 1 1 60845EE6
+P 8950 7200
+F 0 "R12" H 8900 7250 50  0000 L CNN
+F 1 "CRGCQ0402F68R" H 8900 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 8950 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 8950 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 8950 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 8950 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 8950 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 8950 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 8950 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 8900 7150 50  0000 L CNN "Resistance"
+F 10 "CRGCQ" H 8950 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 8950 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 8950 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 8950 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 8950 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 8950 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 8950 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 8950 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 8950 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 8950 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 8950 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 8950 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 8950 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 8950 7200 50  0001 C CNN "Number of Terminations"
+	1    8950 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R13
+U 1 1 60855EB5
+P 9350 7200
+F 0 "R13" H 9200 7250 50  0000 R CNN
+F 1 "CRGCQ0402F68R" H 9300 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 9350 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 9350 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 9350 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 9350 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 9350 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 9350 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 9350 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 9200 7150 50  0000 R CNN "Resistance"
+F 10 "CRGCQ" H 9350 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 9350 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 9350 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 9350 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 9350 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 9350 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 9350 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 9350 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 9350 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 9350 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 9350 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 9350 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 9350 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 9350 7200 50  0001 C CNN "Number of Terminations"
+	1    9350 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R14
+U 1 1 60855ECF
+P 9550 7200
+F 0 "R14" H 9500 7250 50  0000 L CNN
+F 1 "CRGCQ0402F68R" H 9500 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 9550 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 9550 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 9550 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 9550 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 9550 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 9550 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 9550 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 9500 7150 50  0000 L CNN "Resistance"
+F 10 "CRGCQ" H 9550 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 9550 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 9550 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 9550 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 9550 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 9550 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 9550 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 9550 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 9550 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 9550 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 9550 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 9550 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 9550 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 9550 7200 50  0001 C CNN "Number of Terminations"
+	1    9550 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R15
+U 1 1 6086495E
+P 11150 7200
+F 0 "R15" H 11000 7250 50  0000 R CNN
+F 1 "CRGCQ0402F68R" H 11100 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 11150 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 11150 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 11150 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 11150 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 11150 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 11150 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 11150 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 11000 7150 50  0000 R CNN "Resistance"
+F 10 "CRGCQ" H 11150 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 11150 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 11150 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 11150 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 11150 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 11150 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 11150 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 11150 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 11150 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 11150 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 11150 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 11150 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 11150 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 11150 7200 50  0001 C CNN "Number of Terminations"
+	1    11150 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R16
+U 1 1 60864978
+P 11350 7200
+F 0 "R16" H 11300 7250 50  0000 L CNN
+F 1 "CRGCQ0402F68R" H 11300 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 11350 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 11350 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 11350 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 11350 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 11350 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 11350 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 11350 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 11300 7150 50  0000 L CNN "Resistance"
+F 10 "CRGCQ" H 11350 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 11350 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 11350 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 11350 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 11350 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 11350 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 11350 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 11350 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 11350 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 11350 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 11350 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 11350 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 11350 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 11350 7200 50  0001 C CNN "Number of Terminations"
+	1    11350 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R17
+U 1 1 60880AA2
+P 11700 7200
+F 0 "R17" H 11550 7250 50  0000 R CNN
+F 1 "CRGCQ0402F68R" H 11650 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 11700 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 11700 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 11700 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 11700 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 11700 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 11700 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 11700 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 11550 7150 50  0000 R CNN "Resistance"
+F 10 "CRGCQ" H 11700 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 11700 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 11700 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 11700 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 11700 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 11700 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 11700 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 11700 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 11700 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 11700 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 11700 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 11700 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 11700 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 11700 7200 50  0001 C CNN "Number of Terminations"
+	1    11700 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R18
+U 1 1 60880ABC
+P 11900 7200
+F 0 "R18" H 11850 7250 50  0000 L CNN
+F 1 "CRGCQ0402F68R" H 11850 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 11900 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 11900 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 11900 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 11900 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 11900 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 11900 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 11900 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 11850 7150 50  0000 L CNN "Resistance"
+F 10 "CRGCQ" H 11900 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 11900 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 11900 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 11900 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 11900 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 11900 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 11900 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 11900 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 11900 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 11900 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 11900 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 11900 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 11900 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 11900 7200 50  0001 C CNN "Number of Terminations"
+	1    11900 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R19
+U 1 1 6088FCE9
+P 12300 7200
+F 0 "R19" H 12150 7250 50  0000 R CNN
+F 1 "CRGCQ0402F68R" H 12250 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 12300 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 12300 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 12300 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 12300 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 12300 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 12300 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 12300 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 12150 7150 50  0000 R CNN "Resistance"
+F 10 "CRGCQ" H 12300 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 12300 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 12300 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 12300 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 12300 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 12300 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 12300 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 12300 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 12300 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 12300 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 12300 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 12300 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 12300 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 12300 7200 50  0001 C CNN "Number of Terminations"
+	1    12300 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Resistor:CRGCQ0402F68R R20
+U 1 1 6088FD03
+P 12500 7200
+F 0 "R20" H 12450 7250 50  0000 L CNN
+F 1 "CRGCQ0402F68R" H 12450 7200 50  0001 L BNN
+F 2 "Resistor:R_0402_1005Metric" H 12500 7200 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English" H 12500 7200 50  0001 C CNN
+F 4 "CRGCQ 0402 68R 1%" H 12500 7200 50  0001 C CNN "Description"
+F 5 "68 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 12500 7200 50  0001 C CNN "Detailed Description"
+F 6 "TE Connectivity Passive Product" H 12500 7200 50  0001 C CNN "Manufacturer"
+F 7 "CRGCQ0402F68R" H 12500 7200 50  0001 C CNN "Manufacturer Part Number"
+F 8 "A129613CT-ND" H 12500 7200 50  0001 C CNN "Digi-Key Part Number"
+F 9 "68" H 12450 7150 50  0000 L CNN "Resistance"
+F 10 "CRGCQ" H 12500 7200 50  0001 C CNN "Series"
+F 11 "Cut Tape (CT)" H 12500 7200 50  0001 C CNN "Packaging"
+F 12 "±1%" H 12500 7200 50  0001 C CNN "Tolerance"
+F 13 "0.063W, 1/16W" H 12500 7200 50  0001 C CNN "Power (Watts)"
+F 14 "Thick Film" H 12500 7200 50  0001 C CNN "Composition"
+F 15 "Automotive AEC-Q200, Moisture Resistant" H 12500 7200 50  0001 C CNN "Features"
+F 16 "±200ppm/°C" H 12500 7200 50  0001 C CNN "Temperature Coefficient"
+F 17 "-55°C ~ 155°C" H 12500 7200 50  0001 C CNN "Operating Temperature"
+F 18 "0402 (1005 Metric)" H 12500 7200 50  0001 C CNN "Package / Case"
+F 19 "AEC-Q200" H 12500 7200 50  0001 C CNN "Ratings"
+F 20 "0402" H 12500 7200 50  0001 C CNN "Supplier Device Package"
+F 21 "0.039\" L x 0.020\" W (1.00mm x 0.50mm)" H 12500 7200 50  0001 C CNN "Size / Dimension"
+F 22 "0.016\" (0.40mm)" H 12500 7200 50  0001 C CNN "Height - Seated (Max)"
+F 23 "2" H 12500 7200 50  0001 C CNN "Number of Terminations"
+	1    12500 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 6950 7400 7050
+Wire Wire Line
+	7600 6950 7600 7050
+Wire Wire Line
+	8000 6950 8000 7050
+Wire Wire Line
+	8200 6950 8200 7050
+Wire Wire Line
+	8650 6950 8650 7050
+Wire Wire Line
+	8850 6950 8850 7050
+Wire Wire Line
+	9250 6950 9250 7050
+Wire Wire Line
+	9450 6950 9450 7050
+Wire Wire Line
+	11050 6950 11050 7050
+Wire Wire Line
+	11250 6950 11250 7050
+Wire Wire Line
+	11600 6950 11600 7050
+Wire Wire Line
+	11800 6950 11800 7050
+Wire Wire Line
+	12200 6950 12200 7050
+Wire Wire Line
+	12400 6950 12400 7050
+Wire Wire Line
+	7600 7350 7600 7450
+Wire Wire Line
+	8200 7350 8200 7450
+Wire Wire Line
+	8850 7350 8850 7450
+Wire Wire Line
+	9450 7350 9450 7450
+Wire Wire Line
+	11250 7350 11250 7450
+Wire Wire Line
+	11800 7350 11800 7450
+Wire Wire Line
+	12400 7350 12400 7450
+Wire Wire Line
+	7400 7350 7400 7650
+Wire Wire Line
+	7400 7650 8000 7650
+Wire Wire Line
+	8000 7650 8000 7350
+Connection ~ 7400 7650
+Wire Wire Line
+	7400 7650 7400 7700
+Wire Wire Line
+	8000 7650 8650 7650
+Wire Wire Line
+	8650 7650 8650 7350
+Connection ~ 8000 7650
+Wire Wire Line
+	8650 7650 9250 7650
+Wire Wire Line
+	9250 7650 9250 7350
+Connection ~ 8650 7650
+Wire Wire Line
+	9250 7650 11050 7650
+Wire Wire Line
+	11050 7650 11050 7350
+Connection ~ 9250 7650
+Wire Wire Line
+	11050 7650 11600 7650
+Wire Wire Line
+	11600 7650 11600 7350
+Connection ~ 11050 7650
+Wire Wire Line
+	11600 7650 12200 7650
+Wire Wire Line
+	12200 7650 12200 7350
+Connection ~ 11600 7650
 $EndSCHEMATC
