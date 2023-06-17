@@ -56,9 +56,13 @@ static void OpenSystemUART() {
 }
 
 void SYSTEM_Initialize() {
-  // NOTE: Do not explicitly reset state of TRIS and PORT for UART TX/RX pins,
-  // as this might cause transient changes in logic levels, which can be treated
-  // as a beginning of data transmission.
+  TRISA = 0;
+  TRISB = 0;
+  TRISC = 0;
+
+  LATA = 0;
+  LATB = 0;
+  LATC = 0;
 
   TASK_Initialize();
   INTERRUPT_Initialize();

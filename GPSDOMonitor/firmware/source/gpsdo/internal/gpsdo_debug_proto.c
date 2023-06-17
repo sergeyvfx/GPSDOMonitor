@@ -24,6 +24,7 @@
 
 #include <xc.h>
 
+#include "base/check.h"
 #include "gpsdo/gpsdo.h"
 #include "gpsdo/internal/gpsdo_parse.h"
 #include "system/interrupt.h"
@@ -141,7 +142,7 @@ static void InterruptHandler(void) {
         break;
 
       case MAECHINE_STATE_RECEIVE_DATA:
-        if (g_context.uart.num_data_bytes > DATA_BUFFER_SIZE) {
+        if (g_context.uart.num_data_bytes >= DATA_BUFFER_SIZE) {
           g_context.machine_state = MAECHINE_STATE_ERROR_BUFFER_OVERFLOW;
           break;
         }

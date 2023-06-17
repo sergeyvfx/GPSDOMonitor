@@ -55,8 +55,9 @@ void INTERRUPT_Register(InterruptFunction function, InterruptPriority priority);
 // The data is read as LSB..MSB.
 
 // Get received data from the highspeed bus.
-// With return num_bytes of 0 and nullptr as a return value if data was never
-// received.
-const uint8_t* INTERRUPT_GetHighspeedData(uint8_t* num_bytes);
+// The data is written to the given buffer, and the number of written bytes is
+// returned.
+// If the buffer is too small, or no data is available 0 is returned.
+uint8_t INTERRUPT_GetHighspeedData(uint8_t* buffer, uint8_t buffer_size);
 
 #endif  // SYSTEM_INTERRUPT_H_

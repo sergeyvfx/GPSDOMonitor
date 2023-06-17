@@ -23,6 +23,7 @@
 #include "system/interrupt.h"
 
 #include <stdbool.h>
+#include <string.h>
 #include <xc.h>
 
 #include "base/check.h"
@@ -56,8 +57,8 @@ static InterruptsTable g_low_interrupts;   // Normal interrupts.
 // a hardcoded amount of bytes.
 #define HIGHSPEED_DATA_MAX_BYTES 9
 
-static bool g_have_data;
-static uint8_t g_received_bytes[HIGHSPEED_DATA_MAX_BYTES];
+static volatile bool g_have_data;
+static volatile uint8_t g_received_bytes[HIGHSPEED_DATA_MAX_BYTES];
 
 #if USE_HARDCODED_ISR
 __reentrant static void InterruptHandlerStub(void) {
@@ -263,12 +264,18 @@ void __interrupt(low_priority) INTERRUPT_InterruptLow(void) {
 #endif
 }
 
-const uint8_t* INTERRUPT_GetHighspeedData(uint8_t* num_bytes) {
+uint8_t INTERRUPT_GetHighspeedData(uint8_t* buffer, const uint8_t buffer_size) {
   if (!g_have_data) {
-    *num_bytes = 0;
-    return NULL;
+    return 0;
   }
 
-  *num_bytes = 9;
-  return g_received_bytes;
+  const uint8_t num_bytes = 9;
+
+  if (buffer_size < num_bytes) {
+    return 0;
+  }
+
+  memcpy(buffer, (const uint8_t*)g_received_bytes, num_bytes);
+
+  return num_bytes;
 }

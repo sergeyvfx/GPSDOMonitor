@@ -25,6 +25,7 @@
 #include <stdbool.h>
 #include <xc.h>
 
+#include "base/check.h"
 #include "gpsdo/gpsdo.h"
 #include "gpsdo/internal/gpsdo_parse.h"
 #include "system/configuration.h"
@@ -70,9 +71,9 @@ typedef enum MachineState {
 } MachineState;
 
 typedef struct Context {
-  MachineState machine_state;
+  volatile MachineState machine_state;
 
-  int idle_ticks_countdown;
+  volatile int idle_ticks_countdown;
 
   struct GPSDOStatus* status;
 } Context;
@@ -165,8 +166,14 @@ static void InterruptHandler_Timer0(void) {
 // Periodic tasks.
 
 static void DecodeTimecode(void) {
-  uint8_t num_bytes;
-  const uint8_t* timecode = INTERRUPT_GetHighspeedData(&num_bytes);
+  uint8_t timecode[16];
+  const uint8_t num_bytes =
+      INTERRUPT_GetHighspeedData(timecode, sizeof(timecode));
+
+  if (!num_bytes) {
+    // During startup there might not be transmission yet.
+    return;
+  }
 
   GPSDO_PARSE_Timecode(g_context.status, timecode, num_bytes);
 }

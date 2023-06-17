@@ -134,30 +134,38 @@ static void UpdateStatus(void) {
     return;
   }
 
-  INDICATOR_FlashLED(0);
+  INDICATOR_Heartbeat();
 
   const GPSDOStatus* gpsdo_status = GPSDO_GetStatus();
 
   if (gpsdo_status->voltage_ok) {
     UART_WriteString("VCORE:OK  ");
+    INDICATOR_PowerStatus(INDICATOR_STATUS_OK);
   } else {
     UART_WriteString("VCORE:FAIL");
+    INDICATOR_PowerStatus(INDICATOR_STATUS_FAIL);
   }
 
   if (gpsdo_status->antenna_ok) {
     UART_WriteString(" ANT:OK  ");
+    INDICATOR_AntennaStatus(INDICATOR_STATUS_OK);
   } else {
     UART_WriteString(" ANT:FAIL");
+    INDICATOR_AntennaStatus(INDICATOR_STATUS_FAIL);
   }
 
   if (gpsdo_status->pll_status == GPSDO_PLL_UNLOCKED) {
     UART_WriteString(" PLL:UNLOCKED");
+    INDICATOR_LockStatus(INDICATOR_STATUS_FAIL);
   } else if (gpsdo_status->pll_status == GPSDO_PLL_SYNCING) {
     UART_WriteString(" PLL:SYNCING ");
+    INDICATOR_LockStatus(INDICATOR_STATUS_BLINKING);
   } else if (gpsdo_status->pll_status == GPSDO_PLL_LOCKED) {
     UART_WriteString(" PLL:LOCKED  ");
+    INDICATOR_LockStatus(INDICATOR_STATUS_OK);
   } else {
     UART_WriteString(" PLL:UNKNOWN ");
+    INDICATOR_LockStatus(INDICATOR_STATUS_FAIL);
   }
 
   if (gpsdo_status->leap_second_announced) {
@@ -252,18 +260,15 @@ static void APP_StartUp(void) {
   CCP1CONbits.DC1B = ccp_duty_cycle & 0b00000011;
   CCPR1L = (ccp_duty_cycle >> 2) & 0xff;
 
-  // 3. Make the CCPx pin an output by clearing the appropriate TRIS bit.
-  TRISCbits.RC2 = 0;
-
-  // 4. Set the TMR2 prescale value, then enable Timer2 by writing to T2CON.
+  // 3. Set the TMR2 prescale value, then enable Timer2 by writing to T2CON.
 
   T2CONbits.TOUTPS = 0;  // No post-scaler.
   T2CONbits.T2CKPS = 1;  // Pre-scaler of 4.
 
-  // 5. Configure the CCPx module for PWM operation.
+  // 4. Configure the CCPx module for PWM operation.
   CCP1CONbits.CCP1M = 0b1100;
 
-  // 6. Start the PWM.
+  // 5. Start the PWM.
   TMR2 = 0;
   T2CONbits.TMR2ON = 1;
 }

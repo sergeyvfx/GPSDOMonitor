@@ -48,8 +48,8 @@
 
 // Heartbeat is used to indicate that the system tasks are running: on every
 // call of `SYSTEM_Tasks()` the heartbeat pin is toggled high and low again.
-#define HEARTBEAT_TRIS_BIT (TRISAbits.RA0)
-#define HEARTBEAT_LAT_BIT (LATAbits.LATA0)
+#define HEARTBEAT_TRIS_BIT (TRISCbits.RC2)
+#define HEARTBEAT_LAT_BIT (LATCbits.LATC2)
 
 ////////////////////////////////////////////////////////////////////////////////
 // UART.

@@ -23,11 +23,25 @@
 #ifndef APP_INDICATION_H_
 #define APP_INDICATION_H_
 
+#include <stdbool.h>
+
+typedef enum IndicatorStatus {
+  INDICATOR_STATUS_UNKNOWN,
+
+  INDICATOR_STATUS_OK,
+  INDICATOR_STATUS_FAIL,
+  INDICATOR_STATUS_BLINKING,
+} IndicatorStatus;
+
 // Initialise indication subsystem.
 // Will configure all required ports, timers, and interrupts.
 void INDICATION_Initialize(void);
 
-// Flash specified LED index for a short period of time.
-void INDICATOR_FlashLED(int led_index);
+// Flash the heartbeat LED.
+void INDICATOR_Heartbeat(void);
+
+void INDICATOR_PowerStatus(IndicatorStatus status);
+void INDICATOR_AntennaStatus(IndicatorStatus status);
+void INDICATOR_LockStatus(IndicatorStatus status);
 
 #endif  // APP_INDICATION_H_

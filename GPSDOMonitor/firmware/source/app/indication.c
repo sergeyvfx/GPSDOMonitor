@@ -31,13 +31,14 @@
 // Timer value which makes it to run at 99.29Hz.
 #define TIMER1_VALUE 35322
 
-static uint8_t global_led_counters[2] = {0, 0};
-static const int global_num_leds = 2;
+static uint8_t global_heartbeat_counter = 0;
 
-// Number of points to decrement from the value.
-// The value is increased in the interrupt, and is subtracted from LED counters
-// from the main routine.
-static uint8_t num_decrement = 0;
+static IndicatorStatus global_lock_status = INDICATOR_STATUS_UNKNOWN;
+static uint8_t global_lock_counter = 0;
+static bool global_lock_on = false;
+
+// The number of timer interrupts handled since the previous tasks handler.
+static uint8_t num_timer_interrupts_handled = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Interrupt handlers.
@@ -46,8 +47,8 @@ static void InterruptHandler(void) {
   // Timer1 interrupt.
 
   if (PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
-    if (num_decrement < 255) {
-      ++num_decrement;
+    if (num_timer_interrupts_handled < 255) {
+      ++num_timer_interrupts_handled;
     }
 
     TMR1 = TIMER1_VALUE;
@@ -60,31 +61,75 @@ static void InterruptHandler(void) {
 // Periodic tasks.
 
 static void Tasks(void) {
-  if (num_decrement != 0) {
-    for (int i = 0; i < global_num_leds; ++i) {
-      if (global_led_counters[i] < num_decrement) {
-        global_led_counters[i] = 0;
-      } else {
-        global_led_counters[i] -= num_decrement;
-      }
+  if (num_timer_interrupts_handled != 0) {
+    if (global_heartbeat_counter < num_timer_interrupts_handled) {
+      global_heartbeat_counter = 0;
+    } else {
+      global_heartbeat_counter -= num_timer_interrupts_handled;
     }
 
-    num_decrement = 0;
+    if (global_lock_counter < num_timer_interrupts_handled) {
+      global_lock_counter = 0;
+    } else {
+      global_lock_counter -= num_timer_interrupts_handled;
+    }
+
+    num_timer_interrupts_handled = 0;
   }
 
-  LATAbits.LATA1 = (global_led_counters[0] != 0) ? 1 : 0;
-  LATAbits.LATA2 = (global_led_counters[1] != 0) ? 1 : 0;
+  // Heartbeat LED.
+  if (global_heartbeat_counter) {
+    LATCbits.LATC0 = 1;
+    LATCbits.LATC1 = 0;
+  } else {
+    LATCbits.LATC0 = 0;
+    LATCbits.LATC1 = 0;
+  }
+
+  // Lock LED.
+  if (global_lock_status == INDICATOR_STATUS_BLINKING) {
+    if (global_lock_counter == 0) {
+      global_lock_counter = 25;
+      global_lock_on = !global_lock_on;
+    }
+
+    if (global_lock_on) {
+      LATAbits.LATA4 = 1;
+      LATAbits.LATA5 = 0;
+    } else {
+      LATAbits.LATA4 = 0;
+      LATAbits.LATA5 = 0;
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // Initialization.
 
 static void InitializePorts(void) {
+  // Power status LED.
+  TRISAbits.RA0 = 0;
   TRISAbits.RA1 = 0;
-  TRISAbits.RA2 = 0;
-
+  LATAbits.LATA0 = 0;
   LATAbits.LATA1 = 0;
+
+  // Antenna status LED.
+  TRISAbits.RA2 = 0;
+  TRISAbits.RA3 = 0;
   LATAbits.LATA2 = 0;
+  LATAbits.LATA3 = 0;
+
+  // Lock status LED.
+  TRISAbits.RA4 = 0;
+  TRISAbits.RA5 = 0;
+  LATAbits.LATA4 = 0;
+  LATAbits.LATA5 = 0;
+
+  // Heartbeat LED.
+  TRISCbits.RC0 = 0;
+  TRISCbits.RC1 = 0;
+  LATCbits.LATC0 = 0;
+  LATCbits.LATC1 = 0;
 }
 
 static void InitializeTimer(void) {
@@ -122,7 +167,7 @@ static void InitializeTimer(void) {
 }
 
 void INDICATION_Initialize(void) {
-  num_decrement = 0;
+  num_timer_interrupts_handled = 0;
 
   INTERRUPT_Register(&InterruptHandler, INTERRUPT_PRIORITY_LOW);
   TASK_Register(&Tasks);
@@ -132,12 +177,71 @@ void INDICATION_Initialize(void) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Control API.
+// Indicator API.
 
-void INDICATOR_FlashLED(int led_index) {
-  if (led_index < 0 || led_index > global_num_leds) {
+void INDICATOR_Heartbeat(void) {
+  global_heartbeat_counter = 10;
+}
+
+void INDICATOR_PowerStatus(const IndicatorStatus status) {
+  switch (status) {
+    case INDICATOR_STATUS_UNKNOWN: break;
+
+    case INDICATOR_STATUS_OK:
+      LATAbits.LATA0 = 1;
+      LATAbits.LATA1 = 0;
+      break;
+
+    case INDICATOR_STATUS_FAIL:
+      LATAbits.LATA0 = 0;
+      LATAbits.LATA1 = 1;
+      break;
+
+    case INDICATOR_STATUS_BLINKING: break;
+  }
+}
+
+void INDICATOR_AntennaStatus(const IndicatorStatus status) {
+  switch (status) {
+    case INDICATOR_STATUS_UNKNOWN: break;
+
+    case INDICATOR_STATUS_OK:
+      LATAbits.LATA2 = 1;
+      LATAbits.LATA3 = 0;
+      break;
+
+    case INDICATOR_STATUS_FAIL:
+      LATAbits.LATA2 = 0;
+      LATAbits.LATA3 = 1;
+      break;
+
+    case INDICATOR_STATUS_BLINKING: break;
+  }
+}
+
+void INDICATOR_LockStatus(IndicatorStatus status) {
+  if (global_lock_status == status) {
     return;
   }
 
-  global_led_counters[led_index] = 10;
+  global_lock_status = status;
+
+  switch (status) {
+    case INDICATOR_STATUS_UNKNOWN: break;
+
+    case INDICATOR_STATUS_OK:
+      LATAbits.LATA4 = 1;
+      LATAbits.LATA5 = 0;
+      break;
+
+    case INDICATOR_STATUS_FAIL:
+      LATAbits.LATA4 = 0;
+      LATAbits.LATA5 = 1;
+      break;
+
+    case INDICATOR_STATUS_BLINKING:
+      global_lock_counter = 25;
+      global_lock_on = false;
+      break;
+  }
 }
