@@ -4,6 +4,20 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/app/main.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/uart/internal/uart_tx_buffer.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/gpsdo/internal/gpsdo_parse.h</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/gpsdo/internal/gpsdo_debug_proto.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/uart/internal/uart_tx_buffer.h</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/base/check.h</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/kernel/internal/kernel.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/uart/internal/uart.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/system/internal/interrupt.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/gpsdo/internal/gpsdo_timecode_proto.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/gpsdo/internal/gpsdo.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/system/internal/system.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/system/internal/task.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/gpsdo/internal/gpsdo_uccm.c</file>
+            <file>file:/D:/Projects/Electronics/GPSDOMonitor/GPSDOMonitor/firmware/source/chip/configuration.h</file>
         </group>
     </open-files>
 </project-private>
