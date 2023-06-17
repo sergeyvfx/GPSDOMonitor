@@ -71,7 +71,7 @@ typedef enum MachineState {
   MAECHINE_STATE_ERROR_BUFFER_OVERFLOW,
   // Error state when new data was received while package was considered
   // finished and tasks were about to handle the data.
-  MAECHINE_STATE_ERROR_BUFFER_COLLISSION,
+  MAECHINE_STATE_ERROR_BUFFER_COLLISION,
 } MachineState;
 
 // Context of the debug data receiver.
@@ -153,10 +153,10 @@ static void InterruptHandler(void) {
         break;
 
       case MAECHINE_STATE_PACKAGE_RECEIVED:
-        g_context.machine_state = MAECHINE_STATE_ERROR_BUFFER_COLLISSION;
+        g_context.machine_state = MAECHINE_STATE_ERROR_BUFFER_COLLISION;
         break;
 
-      case MAECHINE_STATE_ERROR_BUFFER_COLLISSION:
+      case MAECHINE_STATE_ERROR_BUFFER_COLLISION:
       case MAECHINE_STATE_ERROR_BUFFER_OVERFLOW:
         // pass.
         break;
@@ -197,7 +197,7 @@ static void InterruptHandler(void) {
         // longer than the period of the timer).
         break;
 
-      case MAECHINE_STATE_ERROR_BUFFER_COLLISSION:
+      case MAECHINE_STATE_ERROR_BUFFER_COLLISION:
       case MAECHINE_STATE_ERROR_BUFFER_OVERFLOW:
         // pass.
         break;
@@ -247,8 +247,8 @@ static void Tasks(void) {
       g_context.machine_state = MAECHINE_STATE_SKIP_PACKAGE;
       break;
 
-    case MAECHINE_STATE_ERROR_BUFFER_COLLISSION:
-      UART_WriteString("Receive buffer collission\r\n");
+    case MAECHINE_STATE_ERROR_BUFFER_COLLISION:
+      UART_WriteString("Receive buffer collision\r\n");
 
       g_context.machine_state = MAECHINE_STATE_SKIP_PACKAGE;
       break;
