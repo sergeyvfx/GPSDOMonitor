@@ -60,6 +60,8 @@ typedef struct GPSDOStatus {
 
   // GPS-UTC Offset.
   int gps_utc_offset;
+
+  int counter;
 } GPSDOStatus;
 
 // Initialise GPSDO subsystem.

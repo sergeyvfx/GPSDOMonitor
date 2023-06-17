@@ -110,6 +110,8 @@ bool GPSDO_UCCM_UpdateFromDebugProto(GPSDOStatus* status,
 
   status->gps_utc_offset = data[32];
 
+  ++status->counter;
+
   return true;
 }
 
@@ -123,6 +125,8 @@ bool GPSDO_UCCM_UpdateFromTimecode(GPSDOStatus* status,
 
   UpdateFromFlags(status, flags);
   UpdateGPSTime(status, gps_time_bytes);
+
+  ++status->counter;
 
   return true;
 }
