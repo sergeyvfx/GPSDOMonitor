@@ -25,6 +25,7 @@
 #include <stdbool.h>
 #include <xc.h>
 
+#include "base/check.h"
 #include "kernel/kernel.h"
 #include "system/configuration.h"
 #include "system/internal/interrupt_internal.h"
@@ -86,7 +87,7 @@ void INTERRUPT_Initialize(void) {
 static void AssignISRFunction(InterruptsTable* interrupts_table,
                               InterruptFunction function) {
   if (interrupts_table->num_interrupt_handlers == MAX_INTERRUPT_HANDLERS) {
-    KERNEL_Panic();
+    KERNEL_Panic("Number of interrupt handlers exceeded limit");
   }
   switch (interrupts_table->num_interrupt_handlers) {
     case 0: interrupts_table->isr_0 = function; break;
@@ -113,14 +114,14 @@ void INTERRUPT_Register(InterruptFunction function,
   switch (priority) {
     case INTERRUPT_PRIORITY_LOW:
       if (g_low_interrupts.num_interrupt_handlers == MAX_INTERRUPT_HANDLERS) {
-        KERNEL_Panic();
+        KERNEL_Panic("Number of low interrupts exceeded limit");
       }
       g_low_interrupts.functions[g_low_interrupts.num_interrupt_handlers++] =
           function;
       break;
     case INTERRUPT_PRIORITY_HIGH:
       if (g_high_interrupts.num_interrupt_handlers == MAX_INTERRUPT_HANDLERS) {
-        KERNEL_Panic();
+        KERNEL_Panic("Number of high interrupts exceeded limit");
       }
       g_high_interrupts.functions[g_high_interrupts.num_interrupt_handlers++] =
           function;
@@ -231,9 +232,7 @@ void __interrupt(high_priority) INTERRUPT_InterruptHigh(void) {
 
   // Sanity check: the interrupt is supposed to be called for only PortB
   // changes. All the rest of the interrupts are to be handled as low priority.
-  if (!INTCONbits.RBIF) {
-    KERNEL_PanicInInterrupt();
-  }
+  // DEBUG_CHECK_IN_INTERRUPT(INTCONbits.RBIF);
 
 #if USE_HARDCODED_ISR
   g_high_interrupts.isr_0();
@@ -245,9 +244,7 @@ void __interrupt(high_priority) INTERRUPT_InterruptHigh(void) {
 #endif
 
   // The ISR is supposed to clear the interrupt flag.
-  if (INTCONbits.RBIF) {
-    KERNEL_PanicInInterrupt();
-  }
+  // DEBUG_CHECK_IN_INTERRUPT(!INTCONbits.RBIF);
 }
 
 #undef READ_BIT

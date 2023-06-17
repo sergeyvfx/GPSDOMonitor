@@ -22,6 +22,7 @@
 
 #include "gpsdo/internal/gpsdo_uccm.h"
 
+#include "base/check.h"
 #include "gpsdo/gpsdo.h"
 
 // The protocol decoder is based on the article from Sergiy
@@ -115,6 +116,8 @@ bool GPSDO_UCCM_UpdateFromDebugProto(GPSDOStatus* status,
 bool GPSDO_UCCM_UpdateFromTimecode(GPSDOStatus* status,
                                    const uint8_t* data,
                                    const int num_data_bytes) {
+  DEBUG_CHECK(num_data_bytes >= 8);
+
   const uint8_t flags[4] = {data[4], data[5], data[6], data[7]};
   const uint32_t gps_time_bytes[4] = {data[0], data[1], data[2], data[3]};
 

@@ -212,7 +212,7 @@ bool UART_WriteString(const char* str) {
   return UART_WriteBuffer(str, strlen(str));
 }
 
-bool UART_WriteHexByte(uint8_t value) {
+bool UART_WriteHexByte(const uint8_t value) {
   char buffer[5] = "0xXX";
 
   buffer[2] = lut_val_to_hex_char[(value >> 4) & 0xf];

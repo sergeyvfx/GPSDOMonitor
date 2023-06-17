@@ -25,10 +25,13 @@
 #include <string.h>
 
 #include "base/algorithm.h"
+#include "base/check.h"
 
 void UART_TXBuffer_Initialize(UARTTXBuffer* tx_buffer,
                               char* buffer,
-                              size_t buffer_size) {
+                              const size_t buffer_size) {
+  DEBUG_CHECK(buffer_size > 0);
+
   tx_buffer->buffer = buffer;
   tx_buffer->buffer_size = buffer_size;
   tx_buffer->start_data_index = 0;
@@ -41,6 +44,8 @@ static inline size_t GetWrappedDataIndexInBuffer(const UARTTXBuffer* tx_buffer,
 }
 
 bool UART_TXBuffer_TryAppendChar(UARTTXBuffer* tx_buffer, char ch) {
+  DEBUG_CHECK(tx_buffer->buffer_size > 0);
+
   if (tx_buffer->used_data_size == tx_buffer->buffer_size) {
     return false;
   }
@@ -49,6 +54,9 @@ bool UART_TXBuffer_TryAppendChar(UARTTXBuffer* tx_buffer, char ch) {
   // used data size.
   const size_t char_index = GetWrappedDataIndexInBuffer(
       tx_buffer, tx_buffer->start_data_index + tx_buffer->used_data_size);
+
+  DEBUG_CHECK(char_index < tx_buffer->buffer_size);
+
   tx_buffer->buffer[char_index] = ch;
 
   ++tx_buffer->used_data_size;
@@ -58,7 +66,10 @@ bool UART_TXBuffer_TryAppendChar(UARTTXBuffer* tx_buffer, char ch) {
 
 size_t UART_TXBuffer_TryAppendBuffer(UARTTXBuffer* tx_buffer,
                                      const char* buffer,
-                                     size_t length) {
+                                     const size_t length) {
+  DEBUG_CHECK(tx_buffer->buffer_size > 0);
+  DEBUG_CHECK(tx_buffer->used_data_size <= tx_buffer->buffer_size);
+
   // Clamp length to available space in the transmission buffer.
   const size_t tx_buffer_available_length =
       tx_buffer->buffer_size - tx_buffer->used_data_size;
@@ -89,6 +100,7 @@ size_t UART_TXBuffer_TryAppendBuffer(UARTTXBuffer* tx_buffer,
   }
 
   // If needed, wrap copy of new data to the beginning of the allocated buffer.
+  DEBUG_CHECK(length_to_add >= num_bytes_to_append_from_current);
   const size_t num_bytes_to_append_from_start =
       length_to_add - num_bytes_to_append_from_current;
   if (num_bytes_to_append_from_current != 0) {
@@ -107,9 +119,13 @@ size_t UART_TXBuffer_TryAppendString(UARTTXBuffer* tx_buffer, const char* str) {
 }
 
 char UART_TXBuffer_PopFront(UARTTXBuffer* tx_buffer) {
+  DEBUG_CHECK(tx_buffer->buffer_size > 0);
+
   if (UART_TXBuffer_IsEmpty(tx_buffer)) {
     return '\0';
   }
+
+  DEBUG_CHECK(tx_buffer->start_data_index < tx_buffer->buffer_size);
 
   const char result = tx_buffer->buffer[tx_buffer->start_data_index];
 

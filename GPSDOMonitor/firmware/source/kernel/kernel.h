@@ -23,12 +23,14 @@
 #ifndef KERNEL_H_
 #define KERNEL_H_
 
+#define KERNEL_PANIC_MAX_MESSAGE 128
+
 // Enter panic mode.
 //
 // Use this when an unrecoverable issue was detected.
-void KERNEL_Panic(void);
+void KERNEL_Panic(const char message[KERNEL_PANIC_MAX_MESSAGE]);
 
 // A fatal unrecoverable error has been detected from an interrupt.
-void KERNEL_PanicInInterrupt(void);
+void KERNEL_PanicInInterrupt(const char message[KERNEL_PANIC_MAX_MESSAGE]);
 
 #endif  // KERNEL_H_

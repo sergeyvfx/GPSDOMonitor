@@ -146,6 +146,7 @@ static void InterruptHandler(void) {
           break;
         }
 
+        // DEBUG_CHECK(g_context.uart.num_data_bytes < DATA_BUFFER_SIZE);
         g_context.uart.data[g_context.uart.num_data_bytes++] = data;
 
         g_context.uart.received_data_in_time = true;

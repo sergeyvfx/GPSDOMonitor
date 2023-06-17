@@ -25,6 +25,7 @@
 #include <xc.h>
 
 #include "app/indication.h"
+#include "base/check.h"
 #include "gpsdo/gpsdo.h"
 #include "system/system.h"
 #include "system/task.h"
@@ -60,12 +61,13 @@ static void reverse(char* str, int length) {
   }
 }
 
-static char* UInt32ToString(uint32_t value, char* str) {
+static char* UInt32ToString(uint32_t value, char* str, const size_t size) {
   int str_index = 0;
 
   if (value == 0) {
     // Simple case: value is 0. Do early output to simplify code dealing with
     // possible empty string output.
+    DEBUG_CHECK(size >= 2);
     str[str_index++] = '0';
     str[str_index] = '\0';
     return str;
@@ -73,23 +75,28 @@ static char* UInt32ToString(uint32_t value, char* str) {
 
   while (value != 0) {
     const uint8_t digit = value % 10;
+    DEBUG_CHECK(str_index < size);
     str[str_index++] = digit + '0';
     value = value / 10;
   }
 
+  DEBUG_CHECK(str_index < size);
   str[str_index] = '\0';
 
   reverse(str, str_index);
 
+  DEBUG_CHECK(str[str_index] == '\0');
+
   return str;
 }
 
-static char* IntToString(int value, char* str) {
+static char* IntToString(int value, char* str, const size_t size) {
   int str_index = 0;
 
   if (value == 0) {
     // Simple case: value is 0. Do early output to simplify code dealing with
     // possible empty string output.
+    DEBUG_CHECK(size >= 2);
     str[str_index++] = '0';
     str[str_index] = '\0';
     return str;
@@ -102,17 +109,22 @@ static char* IntToString(int value, char* str) {
 
   while (value != 0) {
     const uint8_t digit = value % 10;
+    DEBUG_CHECK(str_index < size);
     str[str_index++] = digit + '0';
     value = value / 10;
   }
 
   if (is_negative) {
+    DEBUG_CHECK(str_index < size);
     str[str_index++] = '-';
   }
 
+  DEBUG_CHECK(str_index < size);
   str[str_index] = '\0';
 
   reverse(str, str_index);
+
+  DEBUG_CHECK(str[str_index] == '\0');
 
   return str;
 }
@@ -162,14 +174,16 @@ static void UpdateStatus(void) {
 
   {
     char gps_utc_offset_str[16];
-    IntToString(gpsdo_status->gps_utc_offset, gps_utc_offset_str);
+    IntToString(gpsdo_status->gps_utc_offset,
+                gps_utc_offset_str,
+                sizeof(gps_utc_offset_str));
     UART_WriteString(" GPS-UTC:");
     UART_WriteString(gps_utc_offset_str);
   }
 
   {
     char gps_time_str[16];
-    UInt32ToString(gpsdo_status->gps_time, gps_time_str);
+    UInt32ToString(gpsdo_status->gps_time, gps_time_str, sizeof(gps_time_str));
     UART_WriteString(" GPS_TIME:");
     UART_WriteString(gps_time_str);
   }

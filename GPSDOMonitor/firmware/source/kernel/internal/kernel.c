@@ -23,16 +23,44 @@
 #include "kernel/kernel.h"
 
 #include <stdbool.h>
+#include <xc.h>
 
-void KERNEL_Panic(void) {
+static void PanicPrintChar(const char ch) {
+  while (TXIF == 0) {
+    asm("nop");
+  }
+  TXREG = ch;
+}
+
+static void PanicPrintMessage(const char message[KERNEL_PANIC_MAX_MESSAGE]) {
+  PanicPrintChar('\r');
+  PanicPrintChar('\n');
+  for (int i = 0; i < KERNEL_PANIC_MAX_MESSAGE; ++i) {
+    if (!message[i]) {
+      break;
+    }
+    PanicPrintChar(message[i]);
+  }
+  PanicPrintChar('\r');
+  PanicPrintChar('\n');
+}
+
+void KERNEL_Panic(const char message[KERNEL_PANIC_MAX_MESSAGE]) {
+  PanicPrintMessage(message);
+
   while (true) {
     // TODO(sergey): Add support of panic LED blink.
+    asm("nop");
   }
 }
 
-void KERNEL_PanicInInterrupt(void) {
+void KERNEL_PanicInInterrupt(const char message[KERNEL_PANIC_MAX_MESSAGE]) {
+  PanicPrintMessage(message);
+
   // TODO(sergey): Shouldn't really be stalling the interrupt. But how to
   // communicate an unrecoverable error?
+
   while (true) {
+    asm("nop");
   }
 }

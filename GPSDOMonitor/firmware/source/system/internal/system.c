@@ -51,7 +51,7 @@ static void OpenSystemUART() {
   uart_options.baudrate = SYSTEM_UART_BAUDRATE;
 
   if (!UART_Open(&uart_options)) {
-    KERNEL_Panic();
+    KERNEL_Panic("Unable to open UART");
   }
 }
 
