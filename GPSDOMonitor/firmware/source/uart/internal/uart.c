@@ -56,6 +56,11 @@ static inline void TX_Tasks(UARTTXBuffer* tx_buffer) {
     return;
   }
 
+  // Wait for the previous transmission to finish.
+  while (TXIF == 0) {
+    asm("nop");
+  }
+
   const char ch = UART_TXBuffer_PopFront(tx_buffer);
   TXREG = ch;
 }
