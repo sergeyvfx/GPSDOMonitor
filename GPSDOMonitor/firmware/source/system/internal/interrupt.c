@@ -191,6 +191,12 @@ void __interrupt(high_priority) INTERRUPT_InterruptHigh(void) {
   //
   // This makes us to be 0.4us to be in the first data bit.
 
+  // Store context.
+  asm("temp_fsr0l  equ 0x22");
+  asm("temp_fsr0h  equ 0x23");
+  asm("movff FSR0L,temp_fsr0l");  // Save the FSR0L register.
+  asm("movff FSR0H,temp_fsr0h");  // Save the FSR0H register.
+
   // Store start address of the array.
   asm("movlw LOW _g_received_bytes");
   asm("movwf FSR0L");
@@ -216,6 +222,10 @@ void __interrupt(high_priority) INTERRUPT_InterruptHigh(void) {
   READ_BYTE();  // Byte 8, offset from bit leading edge: +0.754us.
 
   asm("__run_isr:");
+
+  // Restore context.
+  asm("movff temp_fsr0l,FSR0H");  // Restore the FSR0H register.
+  asm("movff temp_fsr0h,FSR0L");  // Restore the FSR0L register.
 
   // TODO(sergey): Consider switching this to assembly as well.
 
